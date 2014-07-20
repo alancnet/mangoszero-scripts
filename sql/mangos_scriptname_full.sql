@@ -1,5 +1,3 @@
-/*  */
-
 /* AREATRIGGER */
 DELETE FROM scripted_areatrigger WHERE entry=3066;
 INSERT INTO scripted_areatrigger VALUES (3066,'at_ravenholdt');
@@ -47,7 +45,6 @@ DELETE FROM scripted_areatrigger WHERE entry=1966;
 INSERT INTO scripted_areatrigger VALUES (1966,'at_murkdeep');
 DELETE FROM scripted_areatrigger WHERE entry=4047;
 INSERT INTO scripted_areatrigger VALUES (4047,'at_temple_ahnqiraj');
-
 
 /* BATTLEGROUNDS */
 UPDATE creature_template SET ScriptName='npc_spirit_guide' WHERE entry IN (13116, 13117);
@@ -110,9 +107,7 @@ INSERT INTO world_template VALUES
 (0, 'world_map_eastern_kingdoms'),
 (1, 'world_map_kalimdor');
 
-/*  */
 /* ZONE */
-/* */
 
 /* ALTERAC MOUNTAINS */
 
@@ -511,7 +506,6 @@ UPDATE creature_template SET ScriptName='npc_ame01' WHERE entry=9623;
 UPDATE creature_template SET ScriptName='npc_ringo' WHERE entry=9999;
 
 /* UNDERCITY */
-UPDATE creature_template SET ScriptName='npc_lady_sylvanas_windrunner' WHERE entry=10181;
 
 /* WAILING CAVERNS */
 UPDATE instance_template SET ScriptName='instance_wailing_caverns' WHERE map=43;
@@ -560,5 +554,3 @@ UPDATE creature_template SET ScriptName='mob_zealot_lorkhan' WHERE entry=11347;
 UPDATE creature_template SET ScriptName='mob_zealot_zath' WHERE entry=11348;
 UPDATE creature_template SET ScriptName='mob_healing_ward' WHERE entry=14987;
 UPDATE creature_template SET ScriptName='npc_gurubashi_bat_rider' WHERE entry=14750;
-
-/* EOF */

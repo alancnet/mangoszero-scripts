@@ -14,18 +14,17 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-/* ScriptData
-SDName: Undercity
-SD%Complete: 0
-SDComment: Placeholder
-SDCategory: Undercity
-EndScriptData */
-
-/* ContentData
-EndContentData */
+/**
+ * ScriptData
+ * SDName:      maraudon
+ * SD%Complete: 0
+ * SDComment:   Placeholder
+ * SDCategory:  Maraudon
+ * EndScriptData
+ */
 
 #include "precompiled.h"
 
-void AddSC_undercity()
+void AddSC_maraudon()
 {
 }

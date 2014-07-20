@@ -3,11 +3,11 @@
 * Please see the included DOCS/LICENSE.TXT for more information */
 
 #include "precompiled.h"
-#include "system.h"
-#include "../config.h"
+#include "Database/DatabaseEnv.h"
 #include "ProgressBar.h"
 #include "ObjectMgr.h"
-#include "Database/DatabaseEnv.h"
+#include "system.h"
+#include "config-sd2.h"
 
 DatabaseType SD2Database;
 std::string  strSD2Version;
