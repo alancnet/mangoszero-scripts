@@ -426,6 +426,13 @@ include_directories(
 
 #-----------------------------------------------------------------------------
 # Dump generated headers and add custom target for version control information
+
+set(SD2_CONF_VERSION_MAJOR   "2010")
+set(SD2_CONF_VERSION_MINOR   "06")
+set(SD2_CONF_VERSION_RELEASE "20")
+set(SD2_CONF_VERSION_COUNT   "01")
+set(SCRIPTDEV2_VERSION       "${SD2_CONF_VERSION_MAJOR}${SD2_CONF_VERSION_MINOR}${SD2_CONF_VERSION_RELEASE}${SD2_CONF_VERSION_COUNT}")
+
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-sd2.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-sd2.h)
 
 #-----------------------------------------------------------------------------
