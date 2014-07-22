@@ -427,9 +427,9 @@ include_directories(
 #-----------------------------------------------------------------------------
 # Dump generated headers and add custom target for version control information
 
-set(SD2_CONF_VERSION_MAJOR   "2010")
-set(SD2_CONF_VERSION_MINOR   "06")
-set(SD2_CONF_VERSION_RELEASE "20")
+set(SD2_CONF_VERSION_MAJOR   "2012")
+set(SD2_CONF_VERSION_MINOR   "11")
+set(SD2_CONF_VERSION_RELEASE "23")
 set(SD2_CONF_VERSION_COUNT   "01")
 set(SCRIPTDEV2_VERSION       "${SD2_CONF_VERSION_MAJOR}${SD2_CONF_VERSION_MINOR}${SD2_CONF_VERSION_RELEASE}${SD2_CONF_VERSION_COUNT}")
 
