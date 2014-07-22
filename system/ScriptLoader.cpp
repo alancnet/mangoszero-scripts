@@ -31,11 +31,13 @@ extern void AddSC_battleground();
 
 // custom
 
+#ifdef ENABLE_SD2_EXAMPLES
 // examples
 extern void AddSC_example_creature();
 extern void AddSC_example_escort();
 extern void AddSC_example_gossip_codebox();
 extern void AddSC_example_misc();
+#endif
 
 // world
 extern void AddSC_areatrigger_scripts();
@@ -227,14 +229,13 @@ void AddScripts()
     // battlegrounds
     AddSC_battleground();
 
-    // custom
-
+#ifdef ENABLE_SD2_EXAMPLES
     // examples
     AddSC_example_creature();
     AddSC_example_escort();
     AddSC_example_gossip_codebox();
     AddSC_example_misc();
-
+#endif
     // world
     AddSC_areatrigger_scripts();
     AddSC_bosses_emerald_dragons();
@@ -414,9 +415,4 @@ void AddScripts()
     AddSC_ungoro_crater();
     AddSC_winterspring();
 
-    // northrend
-    // removed
-
-    // outland
-    // removed
 }

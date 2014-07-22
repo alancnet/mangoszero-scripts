@@ -28,6 +28,11 @@
 include(MacroMangosSourceGroup)
 
 #-----------------------------------------------------------------------------
+# Options
+option(WITH_SCRIPTDEV2_EXAMPLES             "Build the example script"    OFF)
+mark_as_advanced(WITH_SCRIPTDEV2_EXAMPLES)
+
+#-----------------------------------------------------------------------------
 # Define the scriptdev2 library
 set(sources
     sd2_revision_nr.h
@@ -62,6 +67,13 @@ set(sources
 
 set(sources_battlegrounds
     scripts/battlegrounds/battleground.cpp
+)
+
+set(sources_examples
+    scripts/examples/examplecreature.cpp
+    scripts/examples/exampleescort.cpp
+    scripts/examples/examplegossip_codebox.cpp
+    scripts/examples/examplemisc.cpp
 )
 
 set(sources_world
@@ -374,9 +386,16 @@ set(mangosscript_LIB_SRCS
     ${sources_raid_k_taq}
 )
 
+if(WITH_SCRIPTDEV2_EXAMPLES)
+    list(APPEND mangosscript_LIB_SRCS
+        ${sources_examples}
+     )
+endif()
+
 mangos_source_group(${mangosscript_LIB_SRCS})
 
 # mangos_source_group_topic(${sources_battlegrounds} "Battlegrounds")
+# mangos_source_group_topic(${sources_examples} "Examples")
 # mangos_source_group_topic(${sources_world} "Generic")
 # mangos_source_group_topic(${sources_eastern_kingdoms} "Eastern Kingdoms")
 # mangos_source_group_topic(${sources_kalimdor} "Kalimdor")
@@ -438,6 +457,12 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-sd2.h.cmake ${CMAKE_CURRENT_BI
 #-----------------------------------------------------------------------------
 # Build the scriptdev2 library
 add_library(mangos-scripts SHARED ${mangosscript_LIB_SRCS})
+
+set(BUILD_PROPERTIES " ")
+if(WITH_SCRIPTDEV2_EXAMPLES)
+    set(BUILD_PROPERTIES "${BUILD_PROPERTIES} -DENABLE_SD2_EXAMPLES")
+endif()
+set_target_properties(mangos-scripts PROPERTIES COMPILE_FLAGS ${BUILD_PROPERTIES})
 
 #-----------------------------------------------------------------------------
 # Link the scriptdev2 library
