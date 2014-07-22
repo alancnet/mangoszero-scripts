@@ -16,7 +16,7 @@ CREATE TABLE `custom_texts` (
   `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
   `comment` text,
   PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Custom Texts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Custom Texts';
 
 DROP TABLE IF EXISTS `gossip_texts`;
 CREATE TABLE `gossip_texts` (
@@ -32,7 +32,7 @@ CREATE TABLE `gossip_texts` (
   `content_loc8` text,
   `comment` text,
   PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gossip Texts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gossip Texts';
 
 DROP TABLE IF EXISTS `script_texts`;
 CREATE TABLE `script_texts` (
@@ -52,7 +52,7 @@ CREATE TABLE `script_texts` (
   `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
   `comment` text,
   PRIMARY KEY  (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
 
 DROP TABLE IF EXISTS script_waypoint;
 CREATE TABLE script_waypoint (
@@ -61,12 +61,12 @@ CREATE TABLE script_waypoint (
   location_x float NOT NULL DEFAULT '0',
   location_y float NOT NULL DEFAULT '0',
   location_z float NOT NULL DEFAULT '0',
-  waittime int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'waittime in millisecs',
+  waittime int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'wait time in milliseconds',
   point_comment text,
   PRIMARY KEY (entry, pointid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Creature waypoints';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Creature waypoints';
 
 DROP TABLE IF EXISTS `sd2_db_version`;
 CREATE TABLE `sd2_db_version` (
   `version` varchar(255) NOT NULL default '' COMMENT 'Database version string'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
