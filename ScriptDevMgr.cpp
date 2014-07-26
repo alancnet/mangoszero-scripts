@@ -57,7 +57,6 @@ void LoadDatabase()
     if (SD2Database.Initialize(strSD2DBinfo.c_str()))
     {
         outstring_log("SD2: ScriptDev2 database initialized.");
-        outstring_log("");
 
         pSystemMgr.LoadVersion();
         pSystemMgr.LoadScriptTexts();
@@ -127,15 +126,12 @@ void InitScriptLibrary()
     if (SD2Config.GetIntDefault("ConfVersion", 0) != SD2_CONF_VERSION)
         script_error_log("Configuration file version doesn't match expected version. Some config variables may be wrong or missing.");
 
-    outstring_log("");
-
     // Load database (must be called after SD2Config.SetSource).
     LoadDatabase();
 
     outstring_log("SD2: Loading C++ scripts");
     BarGoLink bar(1);
     bar.step();
-    outstring_log("");
 
     // Resize script ids to needed ammount of assigned ScriptNames (from core)
     m_scripts.resize(GetScriptIdsCount(), NULL);
