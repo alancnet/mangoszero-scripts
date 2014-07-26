@@ -27,7 +27,7 @@
 #include "precompiled.h"
 #include "Item.h"
 #include "Spell.h"
-#include "WorldPacket.h"
+#include "network/WorldPacket.h"
 #include "ObjectMgr.h"
 #include "Cell.h"
 #include "CellImpl.h"

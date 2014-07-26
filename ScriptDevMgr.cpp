@@ -25,9 +25,9 @@
  */
 
 #include "precompiled.h"
-#include "Config/Config.h"
-#include "Database/DatabaseEnv.h"
-#include "ProgressBar.h"
+#include "configuration/Config.h"
+#include "database/DatabaseEnv.h"
+#include "system/ProgressBar.h"
 #include "DBCStores.h"
 #include "ObjectMgr.h"
 #include "config-sd2.h"
