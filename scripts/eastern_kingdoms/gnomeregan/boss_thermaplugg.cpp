@@ -265,12 +265,24 @@ bool GOUse_go_gnomeface_button(Player* pPlayer, GameObject* pGo)
     // If a button is used, the related face should be deactivated (if already activated)
     switch (pGo->GetEntry())
     {
-        case GO_BUTTON_1: pInstance->DoDeactivateBombFace(0); break;
-        case GO_BUTTON_2: pInstance->DoDeactivateBombFace(1); break;
-        case GO_BUTTON_3: pInstance->DoDeactivateBombFace(2); break;
-        case GO_BUTTON_4: pInstance->DoDeactivateBombFace(3); break;
-        case GO_BUTTON_5: pInstance->DoDeactivateBombFace(4); break;
-        case GO_BUTTON_6: pInstance->DoDeactivateBombFace(5); break;
+        case GO_BUTTON_1:
+            pInstance->DoDeactivateBombFace(0);
+            break;
+        case GO_BUTTON_2:
+            pInstance->DoDeactivateBombFace(1);
+            break;
+        case GO_BUTTON_3:
+            pInstance->DoDeactivateBombFace(2);
+            break;
+        case GO_BUTTON_4:
+            pInstance->DoDeactivateBombFace(3);
+            break;
+        case GO_BUTTON_5:
+            pInstance->DoDeactivateBombFace(4);
+            break;
+        case GO_BUTTON_6:
+            pInstance->DoDeactivateBombFace(5);
+            break;
     }
 
     return false;

@@ -155,8 +155,10 @@ uint32 instance_blackfathom_deeps::GetData(uint32 uiType) const
 {
     switch (uiType)
     {
-        case TYPE_KELRIS: return m_auiEncounter[0];
-        case TYPE_SHRINE: return m_auiEncounter[1];
+        case TYPE_KELRIS:
+            return m_auiEncounter[0];
+        case TYPE_SHRINE:
+            return m_auiEncounter[1];
         default:
             return 0;
     }

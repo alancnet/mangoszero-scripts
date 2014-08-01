@@ -52,7 +52,10 @@ const float afLocations[2][4] =
 
 struct MANGOS_DLL_DECL boss_overlordwyrmthalakAI : public ScriptedAI
 {
-    boss_overlordwyrmthalakAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_overlordwyrmthalakAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiBlastWaveTimer;
     uint32 m_uiShoutTimer;

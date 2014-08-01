@@ -110,8 +110,12 @@ void instance_naxxramas::OnCreatureCreate(Creature* pCreature)
             m_mNpcEntryGuidStore[pCreature->GetEntry()] = pCreature->GetObjectGuid();
             break;
 
-        case NPC_SUB_BOSS_TRIGGER:  m_lGothTriggerList.push_back(pCreature->GetObjectGuid()); break;
-        case NPC_TESLA_COIL:        m_lThadTeslaCoilList.push_back(pCreature->GetObjectGuid()); break;
+        case NPC_SUB_BOSS_TRIGGER:
+            m_lGothTriggerList.push_back(pCreature->GetObjectGuid());
+            break;
+        case NPC_TESLA_COIL:
+            m_lThadTeslaCoilList.push_back(pCreature->GetObjectGuid());
+            break;
     }
 }
 
@@ -664,10 +668,18 @@ void instance_naxxramas::DoTaunt()
 
         switch (uiWingsCleared)
         {
-            case 1: DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT1, NPC_KELTHUZAD); break;
-            case 2: DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT2, NPC_KELTHUZAD); break;
-            case 3: DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT3, NPC_KELTHUZAD); break;
-            case 4: DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT4, NPC_KELTHUZAD); break;
+            case 1:
+                DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT1, NPC_KELTHUZAD);
+                break;
+            case 2:
+                DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT2, NPC_KELTHUZAD);
+                break;
+            case 3:
+                DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT3, NPC_KELTHUZAD);
+                break;
+            case 4:
+                DoOrSimulateScriptTextForThisInstance(SAY_KELTHUZAD_TAUNT4, NPC_KELTHUZAD);
+                break;
         }
     }
 }

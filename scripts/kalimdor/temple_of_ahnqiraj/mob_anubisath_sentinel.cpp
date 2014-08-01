@@ -112,15 +112,33 @@ struct MANGOS_DLL_DECL npc_anubisath_sentinelAI : public ScriptedAI
     {
         switch (urand(0, 8))
         {
-            case 0: m_uiMyAbility = SPELL_MENDING; break;
-            case 1: m_uiMyAbility = SPELL_PERIODIC_KNOCK_AWAY; break;
-            case 2: m_uiMyAbility = SPELL_PERIODIC_MANA_BURN; break;
-            case 3: m_uiMyAbility = SPELL_FIRE_ARCANE_REFLECT; break;
-            case 4: m_uiMyAbility = SPELL_SHADOW_FROST_REFLECT; break;
-            case 5: m_uiMyAbility = SPELL_THORNS; break;
-            case 6: m_uiMyAbility = SPELL_PERIODIC_THUNDERCLAP; break;
-            case 7: m_uiMyAbility = SPELL_MORTAL_STRIKE; break;
-            case 8: m_uiMyAbility = SPELL_PERIODIC_SHADOW_STORM; break;
+            case 0:
+                m_uiMyAbility = SPELL_MENDING;
+                break;
+            case 1:
+                m_uiMyAbility = SPELL_PERIODIC_KNOCK_AWAY;
+                break;
+            case 2:
+                m_uiMyAbility = SPELL_PERIODIC_MANA_BURN;
+                break;
+            case 3:
+                m_uiMyAbility = SPELL_FIRE_ARCANE_REFLECT;
+                break;
+            case 4:
+                m_uiMyAbility = SPELL_SHADOW_FROST_REFLECT;
+                break;
+            case 5:
+                m_uiMyAbility = SPELL_THORNS;
+                break;
+            case 6:
+                m_uiMyAbility = SPELL_PERIODIC_THUNDERCLAP;
+                break;
+            case 7:
+                m_uiMyAbility = SPELL_MORTAL_STRIKE;
+                break;
+            case 8:
+                m_uiMyAbility = SPELL_PERIODIC_SHADOW_STORM;
+                break;
         }
 
         DoCastSpellIfCan(m_creature, m_uiMyAbility, CAST_TRIGGERED);

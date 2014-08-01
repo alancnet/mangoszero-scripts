@@ -104,7 +104,10 @@ class MANGOS_DLL_DECL instance_temple_of_ahnqiraj : public ScriptedInstance
 
         void DoHandleTempleAreaTrigger(uint32 uiTriggerId);
 
-        const char* Save() const override { return m_strInstData.c_str(); }
+        const char* Save() const override
+        {
+            return m_strInstData.c_str();
+        }
         void Load(const char* chrIn) override;
 
         void Update(uint32 uiDiff) override;

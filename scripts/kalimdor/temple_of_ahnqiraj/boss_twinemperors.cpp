@@ -165,7 +165,10 @@ struct MANGOS_DLL_DECL boss_twin_emperorsAI : public ScriptedAI
     virtual bool DoHandleBerserk() = 0;
 
     // Return true to handle shared timers and MeleeAttack
-    virtual bool UpdateEmperorAI(const uint32 /*uiDiff*/) { return true; }
+    virtual bool UpdateEmperorAI(const uint32 /*uiDiff*/)
+    {
+        return true;
+    }
 
     void UpdateAI(const uint32 uiDiff) override
     {
@@ -208,7 +211,10 @@ struct MANGOS_DLL_DECL boss_twin_emperorsAI : public ScriptedAI
 
 struct MANGOS_DLL_DECL boss_veknilashAI : public boss_twin_emperorsAI
 {
-    boss_veknilashAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature) { Reset(); }
+    boss_veknilashAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiUppercutTimer;
     uint32 m_uiUnbalancingStrikeTimer;
@@ -235,10 +241,18 @@ struct MANGOS_DLL_DECL boss_veknilashAI : public boss_twin_emperorsAI
 
         switch (urand(0, 3))
         {
-            case 0: DoScriptText(SAY_VEKNILASH_AGGRO_1, m_creature); break;
-            case 1: DoScriptText(SAY_VEKNILASH_AGGRO_2, m_creature); break;
-            case 2: DoScriptText(SAY_VEKNILASH_AGGRO_3, m_creature); break;
-            case 3: DoScriptText(SAY_VEKNILASH_AGGRO_4, m_creature); break;
+            case 0:
+                DoScriptText(SAY_VEKNILASH_AGGRO_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_VEKNILASH_AGGRO_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_VEKNILASH_AGGRO_3, m_creature);
+                break;
+            case 3:
+                DoScriptText(SAY_VEKNILASH_AGGRO_4, m_creature);
+                break;
         }
     }
 
@@ -316,7 +330,10 @@ struct MANGOS_DLL_DECL boss_veknilashAI : public boss_twin_emperorsAI
 
 struct MANGOS_DLL_DECL boss_veklorAI : public boss_twin_emperorsAI
 {
-    boss_veklorAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature) { Reset(); }
+    boss_veklorAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiShadowBoltTimer;
     uint32 m_uiBlizzardTimer;
@@ -345,10 +362,18 @@ struct MANGOS_DLL_DECL boss_veklorAI : public boss_twin_emperorsAI
 
         switch (urand(0, 3))
         {
-            case 0: DoScriptText(SAY_VEKLOR_AGGRO_1, m_creature); break;
-            case 1: DoScriptText(SAY_VEKLOR_AGGRO_2, m_creature); break;
-            case 2: DoScriptText(SAY_VEKLOR_AGGRO_3, m_creature); break;
-            case 3: DoScriptText(SAY_VEKLOR_AGGRO_4, m_creature); break;
+            case 0:
+                DoScriptText(SAY_VEKLOR_AGGRO_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_VEKLOR_AGGRO_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_VEKLOR_AGGRO_3, m_creature);
+                break;
+            case 3:
+                DoScriptText(SAY_VEKLOR_AGGRO_4, m_creature);
+                break;
         }
     }
 

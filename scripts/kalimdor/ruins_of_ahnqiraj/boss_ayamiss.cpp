@@ -72,7 +72,10 @@ static const SummonLocation aAyamissSpawnLocs[] =
 
 struct MANGOS_DLL_DECL boss_ayamissAI : public ScriptedAI
 {
-    boss_ayamissAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_ayamissAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiStingerSprayTimer;
     uint32 m_uiPoisonStingerTimer;

@@ -75,7 +75,10 @@ static const float aBoarSpawn[4][3] =
 
 struct MANGOS_DLL_DECL npc_willix_the_importerAI : public npc_escortAI
 {
-    npc_willix_the_importerAI(Creature* m_creature) : npc_escortAI(m_creature) { Reset(); }
+    npc_willix_the_importerAI(Creature* m_creature) : npc_escortAI(m_creature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 
@@ -84,10 +87,18 @@ struct MANGOS_DLL_DECL npc_willix_the_importerAI : public npc_escortAI
     {
         switch (urand(0, 6))                                // Not always said
         {
-            case 0: DoScriptText(SAY_WILLIX_AGGRO_1, m_creature, pWho); break;
-            case 1: DoScriptText(SAY_WILLIX_AGGRO_2, m_creature, pWho); break;
-            case 2: DoScriptText(SAY_WILLIX_AGGRO_3, m_creature, pWho); break;
-            case 3: DoScriptText(SAY_WILLIX_AGGRO_4, m_creature, pWho); break;
+            case 0:
+                DoScriptText(SAY_WILLIX_AGGRO_1, m_creature, pWho);
+                break;
+            case 1:
+                DoScriptText(SAY_WILLIX_AGGRO_2, m_creature, pWho);
+                break;
+            case 2:
+                DoScriptText(SAY_WILLIX_AGGRO_3, m_creature, pWho);
+                break;
+            case 3:
+                DoScriptText(SAY_WILLIX_AGGRO_4, m_creature, pWho);
+                break;
         }
     }
 
@@ -173,7 +184,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_snufflenose_gopherAI : public ScriptedPetAI
 {
-    npc_snufflenose_gopherAI(Creature* pCreature) : ScriptedPetAI(pCreature) { Reset(); }
+    npc_snufflenose_gopherAI(Creature* pCreature) : ScriptedPetAI(pCreature)
+    {
+        Reset();
+    }
 
     bool m_bIsMovementActive;
 

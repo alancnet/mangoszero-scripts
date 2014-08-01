@@ -552,10 +552,18 @@ void instance_stratholme::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_BARONESS_ANASTARI: SetData(TYPE_BARONESS, IN_PROGRESS); break;
-        case NPC_MALEKI_THE_PALLID: SetData(TYPE_PALLID, IN_PROGRESS);   break;
-        case NPC_NERUBENKAN:        SetData(TYPE_NERUB, IN_PROGRESS);    break;
-        case NPC_RAMSTEIN:          SetData(TYPE_RAMSTEIN, IN_PROGRESS); break;
+        case NPC_BARONESS_ANASTARI:
+            SetData(TYPE_BARONESS, IN_PROGRESS);
+            break;
+        case NPC_MALEKI_THE_PALLID:
+            SetData(TYPE_PALLID, IN_PROGRESS);
+            break;
+        case NPC_NERUBENKAN:
+            SetData(TYPE_NERUB, IN_PROGRESS);
+            break;
+        case NPC_RAMSTEIN:
+            SetData(TYPE_RAMSTEIN, IN_PROGRESS);
+            break;
             // TODO - uncomment when proper working within core! case NPC_BARON:             SetData(TYPE_BARON, IN_PROGRESS);    break;
 
         case NPC_ABOM_BILE:
@@ -576,10 +584,18 @@ void instance_stratholme::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_BARONESS_ANASTARI: SetData(TYPE_BARONESS, FAIL); break;
-        case NPC_MALEKI_THE_PALLID: SetData(TYPE_PALLID, FAIL);   break;
-        case NPC_NERUBENKAN:        SetData(TYPE_NERUB, FAIL);    break;
-        case NPC_RAMSTEIN:          SetData(TYPE_RAMSTEIN, FAIL); break;
+        case NPC_BARONESS_ANASTARI:
+            SetData(TYPE_BARONESS, FAIL);
+            break;
+        case NPC_MALEKI_THE_PALLID:
+            SetData(TYPE_PALLID, FAIL);
+            break;
+        case NPC_NERUBENKAN:
+            SetData(TYPE_NERUB, FAIL);
+            break;
+        case NPC_RAMSTEIN:
+            SetData(TYPE_RAMSTEIN, FAIL);
+            break;
             // TODO - uncomment when proper working within core! case NPC_BARON:             SetData(TYPE_BARON, FAIL);    break;
 
         case NPC_ABOM_BILE:
@@ -599,11 +615,21 @@ void instance_stratholme::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_BARONESS_ANASTARI: SetData(TYPE_BARONESS, DONE); break;
-        case NPC_MALEKI_THE_PALLID: SetData(TYPE_PALLID, DONE);   break;
-        case NPC_NERUBENKAN:        SetData(TYPE_NERUB, DONE);    break;
-        case NPC_RAMSTEIN:          SetData(TYPE_RAMSTEIN, DONE); break;
-        case NPC_BARON:             SetData(TYPE_BARON, DONE);    break;
+        case NPC_BARONESS_ANASTARI:
+            SetData(TYPE_BARONESS, DONE);
+            break;
+        case NPC_MALEKI_THE_PALLID:
+            SetData(TYPE_PALLID, DONE);
+            break;
+        case NPC_NERUBENKAN:
+            SetData(TYPE_NERUB, DONE);
+            break;
+        case NPC_RAMSTEIN:
+            SetData(TYPE_RAMSTEIN, DONE);
+            break;
+        case NPC_BARON:
+            SetData(TYPE_BARON, DONE);
+            break;
 
         case NPC_THUZADIN_ACOLYTE:
             ThazudinAcolyteJustDied(pCreature);
@@ -676,9 +702,15 @@ void instance_stratholme::ThazudinAcolyteJustDied(Creature* pCreature)
 
             switch (i)
             {
-                case 0: SetData(TYPE_BARONESS, SPECIAL); break;
-                case 1: SetData(TYPE_NERUB, SPECIAL);    break;
-                case 2: SetData(TYPE_PALLID, SPECIAL);   break;
+                case 0:
+                    SetData(TYPE_BARONESS, SPECIAL);
+                    break;
+                case 1:
+                    SetData(TYPE_NERUB, SPECIAL);
+                    break;
+                case 2:
+                    SetData(TYPE_PALLID, SPECIAL);
+                    break;
             }
         }
     }

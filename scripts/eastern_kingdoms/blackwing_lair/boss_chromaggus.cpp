@@ -185,11 +185,21 @@ struct MANGOS_DLL_DECL boss_chromaggusAI : public ScriptedAI
 
             switch (urand(0, 4))
             {
-                case 0: m_uiSpellAfflict = SPELL_BROODAF_BLUE; break;
-                case 1: m_uiSpellAfflict = SPELL_BROODAF_BLACK; break;
-                case 2: m_uiSpellAfflict = SPELL_BROODAF_RED; break;
-                case 3: m_uiSpellAfflict = SPELL_BROODAF_BRONZE; break;
-                case 4: m_uiSpellAfflict = SPELL_BROODAF_GREEN; break;
+                case 0:
+                    m_uiSpellAfflict = SPELL_BROODAF_BLUE;
+                    break;
+                case 1:
+                    m_uiSpellAfflict = SPELL_BROODAF_BLACK;
+                    break;
+                case 2:
+                    m_uiSpellAfflict = SPELL_BROODAF_RED;
+                    break;
+                case 3:
+                    m_uiSpellAfflict = SPELL_BROODAF_BRONZE;
+                    break;
+                case 4:
+                    m_uiSpellAfflict = SPELL_BROODAF_GREEN;
+                    break;
             }
 
             GuidVector vGuids;

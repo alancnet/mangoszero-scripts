@@ -120,9 +120,15 @@ void instance_sunken_temple::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_ATALARION:         SetData(TYPE_ATALARION, DONE); break;
-        case NPC_JAMMALAN:          SetData(TYPE_JAMMALAN, DONE);  break;
-        case NPC_AVATAR_OF_HAKKAR:  SetData(TYPE_AVATAR, DONE);    break;
+        case NPC_ATALARION:
+            SetData(TYPE_ATALARION, DONE);
+            break;
+        case NPC_JAMMALAN:
+            SetData(TYPE_JAMMALAN, DONE);
+            break;
+        case NPC_AVATAR_OF_HAKKAR:
+            SetData(TYPE_AVATAR, DONE);
+            break;
 
         case NPC_SUPPRESSOR:
             m_bCanSummonBloodkeeper = true;
@@ -178,9 +184,15 @@ void instance_sunken_temple::SetData(uint32 uiType, uint32 uiData)
                 {
                         // Yells on each flame
                         // TODO It might be possible that these yells should be ordered randomly, however this is the seen state
-                    case 1: DoScriptText(SAY_AVATAR_BRAZIER_1, pShade); break;
-                    case 2: DoScriptText(SAY_AVATAR_BRAZIER_2, pShade); break;
-                    case 3: DoScriptText(SAY_AVATAR_BRAZIER_3, pShade); break;
+                    case 1:
+                        DoScriptText(SAY_AVATAR_BRAZIER_1, pShade);
+                        break;
+                    case 2:
+                        DoScriptText(SAY_AVATAR_BRAZIER_2, pShade);
+                        break;
+                    case 3:
+                        DoScriptText(SAY_AVATAR_BRAZIER_3, pShade);
+                        break;
                         // Summon the avatar of all flames are used
                     case MAX_FLAMES:
                         DoScriptText(SAY_AVATAR_BRAZIER_4, pShade);

@@ -49,7 +49,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_shenthulAI : public ScriptedAI
 {
-    npc_shenthulAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_shenthulAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiSaluteTimer;
     uint32 m_uiResetTimer;

@@ -367,9 +367,15 @@ struct MANGOS_DLL_DECL npc_squire_roweAI : public npc_escortAI, private Dialogue
     }
 
     // Check if the event is already running
-    bool IsStormwindQuestActive() { return m_bIsEventInProgress; }
+    bool IsStormwindQuestActive()
+    {
+        return m_bIsEventInProgress;
+    }
 
-    void UpdateEscortAI(const uint32 uiDiff) { DialogueUpdate(uiDiff); }
+    void UpdateEscortAI(const uint32 uiDiff)
+    {
+        DialogueUpdate(uiDiff);
+    }
 };
 
 CreatureAI* GetAI_npc_squire_rowe(Creature* pCreature)
@@ -935,7 +941,10 @@ struct MANGOS_DLL_DECL npc_reginald_windsorAI : public npc_escortAI, private Dia
         m_playerGuid = pPlayer->GetObjectGuid();
     }
 
-    bool IsKeepEventReady() { return m_bIsKeepReady; }
+    bool IsKeepEventReady()
+    {
+        return m_bIsKeepReady;
+    }
 
     void UpdateEscortAI(const uint32 uiDiff) override
     {

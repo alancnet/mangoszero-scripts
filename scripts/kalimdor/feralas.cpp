@@ -58,7 +58,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_oox22feAI : public npc_escortAI
 {
-    npc_oox22feAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_oox22feAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void WaypointReached(uint32 i) override
     {
@@ -106,8 +109,12 @@ struct MANGOS_DLL_DECL npc_oox22feAI : public npc_escortAI
         // For an small probability the npc says something when he get aggro
         switch (urand(0, 9))
         {
-            case 0: DoScriptText(SAY_OOX_AGGRO1, m_creature); break;
-            case 1: DoScriptText(SAY_OOX_AGGRO2, m_creature); break;
+            case 0:
+                DoScriptText(SAY_OOX_AGGRO1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_OOX_AGGRO2, m_creature);
+                break;
         }
     }
 

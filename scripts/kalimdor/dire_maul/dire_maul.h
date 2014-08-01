@@ -125,7 +125,10 @@ class MANGOS_DLL_DECL instance_dire_maul : public ScriptedInstance
         void OnCreatureEnterCombat(Creature* pCreature) override;
         void OnCreatureDeath(Creature* pCreature) override;
 
-        const char* Save() const override { return m_strInstData.c_str(); }
+        const char* Save() const override
+        {
+            return m_strInstData.c_str();
+        }
         void Load(const char* chrIn) override;
 
         bool CheckConditionCriteriaMeet(Player const* pPlayer, uint32 uiInstanceConditionId, WorldObject const* pConditionSource, uint32 conditionSourceType) const override;

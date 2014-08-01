@@ -190,7 +190,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_niby_the_almightyAI : public ScriptedAI
 {
-    npc_niby_the_almightyAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_niby_the_almightyAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiSummonTimer;
     uint8  m_uiSpeech;

@@ -100,9 +100,15 @@ void instance_deadmines::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_RHAHKZOR: SetData(TYPE_RHAHKZOR, DONE); break;
-        case NPC_SNEED:    SetData(TYPE_SNEED, DONE);    break;
-        case NPC_GILNID:   SetData(TYPE_GILNID, DONE);   break;
+        case NPC_RHAHKZOR:
+            SetData(TYPE_RHAHKZOR, DONE);
+            break;
+        case NPC_SNEED:
+            SetData(TYPE_SNEED, DONE);
+            break;
+        case NPC_GILNID:
+            SetData(TYPE_GILNID, DONE);
+            break;
     }
 }
 

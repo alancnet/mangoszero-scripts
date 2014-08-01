@@ -58,7 +58,10 @@ const float m_afGalakLoc[] = { -4867.387695f, -1357.353760f, -48.226f};
 
 struct MANGOS_DLL_DECL npc_kanatiAI : public npc_escortAI
 {
-    npc_kanatiAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_kanatiAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 
@@ -138,7 +141,10 @@ float m_afBanditLoc[6][6] =
 
 struct MANGOS_DLL_DECL npc_lakota_windsongAI : public npc_escortAI
 {
-    npc_lakota_windsongAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_lakota_windsongAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 
@@ -215,7 +221,10 @@ float m_afWyvernLoc[3][3] =
 
 struct MANGOS_DLL_DECL npc_paoka_swiftmountainAI : public npc_escortAI
 {
-    npc_paoka_swiftmountainAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_paoka_swiftmountainAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 

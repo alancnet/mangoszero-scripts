@@ -352,7 +352,10 @@ struct MANGOS_DLL_DECL boss_mandokirAI : public ScriptedAI
 // Ohgan
 struct MANGOS_DLL_DECL mob_ohganAI : public ScriptedAI
 {
-    mob_ohganAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    mob_ohganAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiSunderArmorTimer;
 

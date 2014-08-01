@@ -66,7 +66,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_deathstalker_erlandAI : public npc_escortAI
 {
-    npc_deathstalker_erlandAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_deathstalker_erlandAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void WaypointReached(uint32 i) override
     {
@@ -113,9 +116,15 @@ struct MANGOS_DLL_DECL npc_deathstalker_erlandAI : public npc_escortAI
     {
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(SAY_AGGRO_1, m_creature, who); break;
-            case 1: DoScriptText(SAY_AGGRO_2, m_creature, who); break;
-            case 2: DoScriptText(SAY_AGGRO_3, m_creature, who); break;
+            case 0:
+                DoScriptText(SAY_AGGRO_1, m_creature, who);
+                break;
+            case 1:
+                DoScriptText(SAY_AGGRO_2, m_creature, who);
+                break;
+            case 2:
+                DoScriptText(SAY_AGGRO_3, m_creature, who);
+                break;
         }
     }
 };
@@ -185,7 +194,10 @@ static float m_afMoveCoords[] = { -410.69f, 1498.04f, 19.77f};
 
 struct MANGOS_DLL_DECL npc_deathstalker_faerleiaAI : public ScriptedAI
 {
-    npc_deathstalker_faerleiaAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_deathstalker_faerleiaAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 

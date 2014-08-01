@@ -134,14 +134,20 @@ class MANGOS_DLL_DECL instance_blackrock_spire : public ScriptedInstance, privat
         void SetData(uint32 uiType, uint32 uiData) override;
         uint32 GetData(uint32 uiType) const override;
 
-        const char* Save() const override { return m_strInstData.c_str(); }
+        const char* Save() const override
+        {
+            return m_strInstData.c_str();
+        }
         void Load(const char* chrIn) override;
 
         void DoUseEmberseerRunes(bool bReset = false);
         void DoProcessEmberseerEvent();
 
         void DoSortRoomEventMobs();
-        void GetIncarceratorGUIDList(GuidList& lList) { lList = m_lIncarceratorGUIDList; }
+        void GetIncarceratorGUIDList(GuidList& lList)
+        {
+            lList = m_lIncarceratorGUIDList;
+        }
 
         void StartflamewreathEventIfCan();
 

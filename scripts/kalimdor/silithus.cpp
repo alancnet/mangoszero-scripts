@@ -441,11 +441,16 @@ struct MANGOS_DLL_DECL npc_anachronos_the_ancientAI : public ScriptedAI, private
     {
         switch (uiEntry)
         {
-            case NPC_ANACHRONOS_THE_ANCIENT: return m_creature;
-            case NPC_ARYGOS:                 return m_creature->GetMap()->GetCreature(m_arygosGuid);
-            case NPC_CAELESTRASZ:            return m_creature->GetMap()->GetCreature(m_CaelestraszGuid);
-            case NPC_MERITHRA_OF_THE_DREAM:  return m_creature->GetMap()->GetCreature(m_merithraGuid);
-            case NPC_FANDRAL_STAGHELM:       return m_creature->GetMap()->GetCreature(m_fandralGuid);
+            case NPC_ANACHRONOS_THE_ANCIENT:
+                return m_creature;
+            case NPC_ARYGOS:
+                return m_creature->GetMap()->GetCreature(m_arygosGuid);
+            case NPC_CAELESTRASZ:
+                return m_creature->GetMap()->GetCreature(m_CaelestraszGuid);
+            case NPC_MERITHRA_OF_THE_DREAM:
+                return m_creature->GetMap()->GetCreature(m_merithraGuid);
+            case NPC_FANDRAL_STAGHELM:
+                return m_creature->GetMap()->GetCreature(m_fandralGuid);
 
             default:
                 return NULL;

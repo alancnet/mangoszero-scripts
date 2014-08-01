@@ -137,13 +137,27 @@ void instance_blackrock_spire::OnObjectCreate(GameObject* pGo)
                 pGo->SetGoState(GO_STATE_ACTIVE);
             break;
 
-        case GO_ROOM_1_RUNE: m_aRoomRuneGuid[0] = pGo->GetObjectGuid(); return;
-        case GO_ROOM_2_RUNE: m_aRoomRuneGuid[1] = pGo->GetObjectGuid(); return;
-        case GO_ROOM_3_RUNE: m_aRoomRuneGuid[2] = pGo->GetObjectGuid(); return;
-        case GO_ROOM_4_RUNE: m_aRoomRuneGuid[3] = pGo->GetObjectGuid(); return;
-        case GO_ROOM_5_RUNE: m_aRoomRuneGuid[4] = pGo->GetObjectGuid(); return;
-        case GO_ROOM_6_RUNE: m_aRoomRuneGuid[5] = pGo->GetObjectGuid(); return;
-        case GO_ROOM_7_RUNE: m_aRoomRuneGuid[6] = pGo->GetObjectGuid(); return;
+        case GO_ROOM_1_RUNE:
+            m_aRoomRuneGuid[0] = pGo->GetObjectGuid();
+            return;
+        case GO_ROOM_2_RUNE:
+            m_aRoomRuneGuid[1] = pGo->GetObjectGuid();
+            return;
+        case GO_ROOM_3_RUNE:
+            m_aRoomRuneGuid[2] = pGo->GetObjectGuid();
+            return;
+        case GO_ROOM_4_RUNE:
+            m_aRoomRuneGuid[3] = pGo->GetObjectGuid();
+            return;
+        case GO_ROOM_5_RUNE:
+            m_aRoomRuneGuid[4] = pGo->GetObjectGuid();
+            return;
+        case GO_ROOM_6_RUNE:
+            m_aRoomRuneGuid[5] = pGo->GetObjectGuid();
+            return;
+        case GO_ROOM_7_RUNE:
+            m_aRoomRuneGuid[6] = pGo->GetObjectGuid();
+            return;
 
         case GO_EMBERSEER_RUNE_1:
         case GO_EMBERSEER_RUNE_2:
@@ -175,8 +189,12 @@ void instance_blackrock_spire::OnCreatureCreate(Creature* pCreature)
             break;
 
         case NPC_BLACKHAND_SUMMONER:
-        case NPC_BLACKHAND_VETERAN:      m_lRoomEventMobGUIDList.push_back(pCreature->GetObjectGuid()); break;
-        case NPC_BLACKHAND_INCARCERATOR: m_lIncarceratorGUIDList.push_back(pCreature->GetObjectGuid()); break;
+        case NPC_BLACKHAND_VETERAN:
+            m_lRoomEventMobGUIDList.push_back(pCreature->GetObjectGuid());
+            break;
+        case NPC_BLACKHAND_INCARCERATOR:
+            m_lIncarceratorGUIDList.push_back(pCreature->GetObjectGuid());
+            break;
     }
 }
 

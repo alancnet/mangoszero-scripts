@@ -64,7 +64,10 @@ enum
 
 struct MANGOS_DLL_DECL mob_aquementasAI : public ScriptedAI
 {
-    mob_aquementasAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    mob_aquementasAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiSwitchFactionTimer;
     uint32 m_uiFrostShockTimer;
@@ -163,7 +166,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_oox17tnAI : public npc_escortAI
 {
-    npc_oox17tnAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_oox17tnAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void WaypointReached(uint32 i) override
     {
@@ -207,8 +213,12 @@ struct MANGOS_DLL_DECL npc_oox17tnAI : public npc_escortAI
         // For an small probability he say something when it aggros
         switch (urand(0, 9))
         {
-            case 0: DoScriptText(SAY_OOX_AGGRO1, m_creature); break;
-            case 1: DoScriptText(SAY_OOX_AGGRO2, m_creature); break;
+            case 0:
+                DoScriptText(SAY_OOX_AGGRO1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_OOX_AGGRO2, m_creature);
+                break;
         }
     }
 
@@ -324,7 +334,10 @@ const float m_afToWaterLoc[] = { -7032.664551f, -4906.199219f, -1.606446f};
 
 struct MANGOS_DLL_DECL npc_toogaAI : public FollowerAI
 {
-    npc_toogaAI(Creature* pCreature) : FollowerAI(pCreature) { Reset(); }
+    npc_toogaAI(Creature* pCreature) : FollowerAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiCheckSpeechTimer;
     uint32 m_uiPostEventTimer;
@@ -427,8 +440,12 @@ struct MANGOS_DLL_DECL npc_toogaAI : public FollowerAI
 
                     switch (urand(0, 50))
                     {
-                        case 10: DoScriptText(SAY_TOOG_THIRST, m_creature); break;
-                        case 25: DoScriptText(SAY_TOOG_WORRIED, m_creature); break;
+                        case 10:
+                            DoScriptText(SAY_TOOG_THIRST, m_creature);
+                            break;
+                        case 25:
+                            DoScriptText(SAY_TOOG_WORRIED, m_creature);
+                            break;
                     }
                 }
                 else

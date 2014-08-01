@@ -45,7 +45,10 @@ EndContentData */
 
 struct MANGOS_DLL_DECL npc_ragged_johnAI : public ScriptedAI
 {
-    npc_ragged_johnAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_ragged_johnAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 
@@ -350,8 +353,12 @@ struct MANGOS_DLL_DECL npc_grark_lorkrubAI : public npc_escortAI, private Dialog
     {
         switch (pSummoned->GetEntry())
         {
-            case NPC_HIGH_EXECUTIONER_NUZARK: m_nuzarkGuid  = pSummoned->GetObjectGuid(); break;
-            case NPC_SHADOW_OF_LEXLORT:       m_lexlortGuid = pSummoned->GetObjectGuid(); break;
+            case NPC_HIGH_EXECUTIONER_NUZARK:
+                m_nuzarkGuid  = pSummoned->GetObjectGuid();
+                break;
+            case NPC_SHADOW_OF_LEXLORT:
+                m_lexlortGuid = pSummoned->GetObjectGuid();
+                break;
             case NPC_SEARSCALE_DRAKE:
                 // If it's the flying drake allow him to move in circles
                 if (m_bIsFirstSearScale)
@@ -397,9 +404,12 @@ struct MANGOS_DLL_DECL npc_grark_lorkrubAI : public npc_escortAI, private Dialog
     {
         switch (uiEntry)
         {
-            case NPC_GRARK_LORKRUB:           return m_creature;
-            case NPC_HIGH_EXECUTIONER_NUZARK: return m_creature->GetMap()->GetCreature(m_nuzarkGuid);
-            case NPC_SHADOW_OF_LEXLORT:       return m_creature->GetMap()->GetCreature(m_lexlortGuid);
+            case NPC_GRARK_LORKRUB:
+                return m_creature;
+            case NPC_HIGH_EXECUTIONER_NUZARK:
+                return m_creature->GetMap()->GetCreature(m_nuzarkGuid);
+            case NPC_SHADOW_OF_LEXLORT:
+                return m_creature->GetMap()->GetCreature(m_lexlortGuid);
 
             default:
                 return NULL;

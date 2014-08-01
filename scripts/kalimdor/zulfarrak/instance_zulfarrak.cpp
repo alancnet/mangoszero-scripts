@@ -159,14 +159,30 @@ void instance_zulfarrak::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_VELRATHA: SetData(TYPE_VELRATHA, IN_PROGRESS); break;
-        case NPC_GAHZRILLA: SetData(TYPE_GAHZRILLA, IN_PROGRESS); break;
-        case NPC_ANTUSUL: SetData(TYPE_ANTUSUL, IN_PROGRESS); break;
-        case NPC_THEKA: SetData(TYPE_THEKA, IN_PROGRESS); break;
-        case NPC_ZUMRAH: SetData(TYPE_ZUMRAH, IN_PROGRESS); break;
-        case NPC_NEKRUM: SetData(TYPE_NEKRUM, IN_PROGRESS); break;
-        case NPC_SEZZZIZ: SetData(TYPE_SEZZZIZ, IN_PROGRESS); break;
-        case NPC_CHIEF_SANDSCALP: SetData(TYPE_CHIEF_SANDSCALP, IN_PROGRESS); break;
+        case NPC_VELRATHA:
+            SetData(TYPE_VELRATHA, IN_PROGRESS);
+            break;
+        case NPC_GAHZRILLA:
+            SetData(TYPE_GAHZRILLA, IN_PROGRESS);
+            break;
+        case NPC_ANTUSUL:
+            SetData(TYPE_ANTUSUL, IN_PROGRESS);
+            break;
+        case NPC_THEKA:
+            SetData(TYPE_THEKA, IN_PROGRESS);
+            break;
+        case NPC_ZUMRAH:
+            SetData(TYPE_ZUMRAH, IN_PROGRESS);
+            break;
+        case NPC_NEKRUM:
+            SetData(TYPE_NEKRUM, IN_PROGRESS);
+            break;
+        case NPC_SEZZZIZ:
+            SetData(TYPE_SEZZZIZ, IN_PROGRESS);
+            break;
+        case NPC_CHIEF_SANDSCALP:
+            SetData(TYPE_CHIEF_SANDSCALP, IN_PROGRESS);
+            break;
     }
 }
 
@@ -174,14 +190,30 @@ void instance_zulfarrak::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_VELRATHA: SetData(TYPE_VELRATHA, FAIL); break;
-        case NPC_GAHZRILLA: SetData(TYPE_GAHZRILLA, FAIL); break;
-        case NPC_ANTUSUL: SetData(TYPE_ANTUSUL, FAIL); break;
-        case NPC_THEKA: SetData(TYPE_THEKA, FAIL); break;
-        case NPC_ZUMRAH: SetData(TYPE_ZUMRAH, FAIL); break;
-        case NPC_NEKRUM: SetData(TYPE_NEKRUM, FAIL); break;
-        case NPC_SEZZZIZ: SetData(TYPE_SEZZZIZ, FAIL); break;
-        case NPC_CHIEF_SANDSCALP: SetData(TYPE_CHIEF_SANDSCALP, FAIL); break;
+        case NPC_VELRATHA:
+            SetData(TYPE_VELRATHA, FAIL);
+            break;
+        case NPC_GAHZRILLA:
+            SetData(TYPE_GAHZRILLA, FAIL);
+            break;
+        case NPC_ANTUSUL:
+            SetData(TYPE_ANTUSUL, FAIL);
+            break;
+        case NPC_THEKA:
+            SetData(TYPE_THEKA, FAIL);
+            break;
+        case NPC_ZUMRAH:
+            SetData(TYPE_ZUMRAH, FAIL);
+            break;
+        case NPC_NEKRUM:
+            SetData(TYPE_NEKRUM, FAIL);
+            break;
+        case NPC_SEZZZIZ:
+            SetData(TYPE_SEZZZIZ, FAIL);
+            break;
+        case NPC_CHIEF_SANDSCALP:
+            SetData(TYPE_CHIEF_SANDSCALP, FAIL);
+            break;
     }
 }
 
@@ -189,14 +221,30 @@ void instance_zulfarrak::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_VELRATHA: SetData(TYPE_VELRATHA, DONE); break;
-        case NPC_GAHZRILLA: SetData(TYPE_GAHZRILLA, DONE); break;
-        case NPC_ANTUSUL: SetData(TYPE_ANTUSUL, DONE); break;
-        case NPC_THEKA: SetData(TYPE_THEKA, DONE); break;
-        case NPC_ZUMRAH: SetData(TYPE_ZUMRAH, DONE); break;
-        case NPC_NEKRUM: SetData(TYPE_NEKRUM, DONE); break;
-        case NPC_SEZZZIZ: SetData(TYPE_SEZZZIZ, DONE); break;
-        case NPC_CHIEF_SANDSCALP: SetData(TYPE_CHIEF_SANDSCALP, DONE); break;
+        case NPC_VELRATHA:
+            SetData(TYPE_VELRATHA, DONE);
+            break;
+        case NPC_GAHZRILLA:
+            SetData(TYPE_GAHZRILLA, DONE);
+            break;
+        case NPC_ANTUSUL:
+            SetData(TYPE_ANTUSUL, DONE);
+            break;
+        case NPC_THEKA:
+            SetData(TYPE_THEKA, DONE);
+            break;
+        case NPC_ZUMRAH:
+            SetData(TYPE_ZUMRAH, DONE);
+            break;
+        case NPC_NEKRUM:
+            SetData(TYPE_NEKRUM, DONE);
+            break;
+        case NPC_SEZZZIZ:
+            SetData(TYPE_SEZZZIZ, DONE);
+            break;
+        case NPC_CHIEF_SANDSCALP:
+            SetData(TYPE_CHIEF_SANDSCALP, DONE);
+            break;
     }
 }
 

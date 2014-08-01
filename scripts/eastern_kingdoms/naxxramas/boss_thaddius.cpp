@@ -128,9 +128,15 @@ struct MANGOS_DLL_DECL boss_thaddiusAI : public Scripted_NoMovementAI
     {
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(SAY_AGGRO_1, m_creature); break;
-            case 1: DoScriptText(SAY_AGGRO_2, m_creature); break;
-            case 2: DoScriptText(SAY_AGGRO_3, m_creature); break;
+            case 0:
+                DoScriptText(SAY_AGGRO_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_AGGRO_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_AGGRO_3, m_creature);
+                break;
         }
 
         // Make Attackable
@@ -449,8 +455,10 @@ struct MANGOS_DLL_DECL boss_thaddiusAddsAI : public ScriptedAI
     {
         switch (m_creature->GetEntry())
         {
-            case NPC_FEUGEN:  return m_pInstance->GetSingleCreatureFromStorage(NPC_STALAGG);
-            case NPC_STALAGG: return m_pInstance->GetSingleCreatureFromStorage(NPC_FEUGEN);
+            case NPC_FEUGEN:
+                return m_pInstance->GetSingleCreatureFromStorage(NPC_STALAGG);
+            case NPC_STALAGG:
+                return m_pInstance->GetSingleCreatureFromStorage(NPC_FEUGEN);
             default:
                 return NULL;
         }

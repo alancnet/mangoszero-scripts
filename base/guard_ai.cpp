@@ -53,9 +53,15 @@ void guardAI::Aggro(Unit* pWho)
     {
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(SAY_GUARD_SIL_AGGRO1, m_creature, pWho); break;
-            case 1: DoScriptText(SAY_GUARD_SIL_AGGRO2, m_creature, pWho); break;
-            case 2: DoScriptText(SAY_GUARD_SIL_AGGRO3, m_creature, pWho); break;
+            case 0:
+                DoScriptText(SAY_GUARD_SIL_AGGRO1, m_creature, pWho);
+                break;
+            case 1:
+                DoScriptText(SAY_GUARD_SIL_AGGRO2, m_creature, pWho);
+                break;
+            case 2:
+                DoScriptText(SAY_GUARD_SIL_AGGRO3, m_creature, pWho);
+                break;
         }
     }
 
@@ -197,12 +203,22 @@ void guardAI::DoReplyToTextEmote(uint32 uiTextEmote)
 {
     switch (uiTextEmote)
     {
-        case TEXTEMOTE_KISS:    m_creature->HandleEmote(EMOTE_ONESHOT_BOW);    break;
-        case TEXTEMOTE_WAVE:    m_creature->HandleEmote(EMOTE_ONESHOT_WAVE);   break;
-        case TEXTEMOTE_SALUTE:  m_creature->HandleEmote(EMOTE_ONESHOT_SALUTE); break;
-        case TEXTEMOTE_SHY:     m_creature->HandleEmote(EMOTE_ONESHOT_FLEX);   break;
+        case TEXTEMOTE_KISS:
+            m_creature->HandleEmote(EMOTE_ONESHOT_BOW);
+            break;
+        case TEXTEMOTE_WAVE:
+            m_creature->HandleEmote(EMOTE_ONESHOT_WAVE);
+            break;
+        case TEXTEMOTE_SALUTE:
+            m_creature->HandleEmote(EMOTE_ONESHOT_SALUTE);
+            break;
+        case TEXTEMOTE_SHY:
+            m_creature->HandleEmote(EMOTE_ONESHOT_FLEX);
+            break;
         case TEXTEMOTE_RUDE:
-        case TEXTEMOTE_CHICKEN: m_creature->HandleEmote(EMOTE_ONESHOT_POINT);  break;
+        case TEXTEMOTE_CHICKEN:
+            m_creature->HandleEmote(EMOTE_ONESHOT_POINT);
+            break;
     }
 }
 

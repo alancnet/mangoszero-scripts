@@ -83,7 +83,10 @@ struct MANGOS_DLL_DECL example_creatureAI : public ScriptedAI
 {
     // *** HANDLED FUNCTION ***
     // This is the constructor, called only once when the creature is first created
-    example_creatureAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    example_creatureAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     // *** CUSTOM VARIABLES ****
     // These variables are for use only by this individual script.
@@ -148,11 +151,21 @@ struct MANGOS_DLL_DECL example_creatureAI : public ScriptedAI
                 // Random switch between 5 outcomes
                 switch (urand(0, 4))
                 {
-                    case 0: DoScriptText(SAY_RANDOM_0, m_creature); break;
-                    case 1: DoScriptText(SAY_RANDOM_1, m_creature); break;
-                    case 2: DoScriptText(SAY_RANDOM_2, m_creature); break;
-                    case 3: DoScriptText(SAY_RANDOM_3, m_creature); break;
-                    case 4: DoScriptText(SAY_RANDOM_4, m_creature); break;
+                    case 0:
+                        DoScriptText(SAY_RANDOM_0, m_creature);
+                        break;
+                    case 1:
+                        DoScriptText(SAY_RANDOM_1, m_creature);
+                        break;
+                    case 2:
+                        DoScriptText(SAY_RANDOM_2, m_creature);
+                        break;
+                    case 3:
+                        DoScriptText(SAY_RANDOM_3, m_creature);
+                        break;
+                    case 4:
+                        DoScriptText(SAY_RANDOM_4, m_creature);
+                        break;
                 }
 
                 m_uiSayTimer = 45 * IN_MILLISECONDS;        // Say something agian in 45 seconds

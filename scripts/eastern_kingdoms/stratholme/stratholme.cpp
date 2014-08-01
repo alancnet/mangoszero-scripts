@@ -155,7 +155,10 @@ enum
 // TODO - likely entirely not needed workaround
 struct MANGOS_DLL_DECL mob_restless_soulAI : public ScriptedAI
 {
-    mob_restless_soulAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    mob_restless_soulAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     ObjectGuid m_taggerGuid;
     uint32 m_uiDieTimer;
@@ -188,10 +191,18 @@ struct MANGOS_DLL_DECL mob_restless_soulAI : public ScriptedAI
 
             switch (urand(0, 3))
             {
-                case 0: DoScriptText(SAY_ZAPPED0, pSummoned); break;
-                case 1: DoScriptText(SAY_ZAPPED1, pSummoned); break;
-                case 2: DoScriptText(SAY_ZAPPED2, pSummoned); break;
-                case 3: DoScriptText(SAY_ZAPPED3, pSummoned); break;
+                case 0:
+                    DoScriptText(SAY_ZAPPED0, pSummoned);
+                    break;
+                case 1:
+                    DoScriptText(SAY_ZAPPED1, pSummoned);
+                    break;
+                case 2:
+                    DoScriptText(SAY_ZAPPED2, pSummoned);
+                    break;
+                case 3:
+                    DoScriptText(SAY_ZAPPED3, pSummoned);
+                    break;
             }
         }
     }
@@ -234,7 +245,10 @@ enum
 
 struct MANGOS_DLL_DECL mobs_spectral_ghostly_citizenAI : public ScriptedAI
 {
-    mobs_spectral_ghostly_citizenAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    mobs_spectral_ghostly_citizenAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiDieTimer;
     bool m_bIsTagged;

@@ -54,7 +54,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_herodAI : public ScriptedAI
 {
-    boss_herodAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_herodAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     bool m_bEnrage;
     bool m_bTraineeSay;

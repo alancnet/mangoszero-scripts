@@ -62,7 +62,10 @@ enum
 
 struct MANGOS_DLL_DECL mob_anubisath_guardianAI : public ScriptedAI
 {
-    mob_anubisath_guardianAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    mob_anubisath_guardianAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiSpell1;
     uint32 m_uiSpell2;

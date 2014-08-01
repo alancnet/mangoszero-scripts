@@ -37,7 +37,10 @@ EndScriptData */
 
 struct MANGOS_DLL_DECL generic_creatureAI : public ScriptedAI
 {
-    generic_creatureAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    generic_creatureAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 GlobalCooldown;      // This variable acts like the global cooldown that players have (1.5 seconds)
     uint32 BuffTimer;           // This variable keeps track of buffs

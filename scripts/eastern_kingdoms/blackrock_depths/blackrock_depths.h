@@ -157,14 +157,27 @@ class MANGOS_DLL_DECL instance_blackrock_depths : public ScriptedInstance
         void SetData(uint32 uiType, uint32 uiData) override;
         uint32 GetData(uint32 uiType) const override;
 
-        const char* Save() const override { return m_strInstData.c_str(); }
+        const char* Save() const override
+        {
+            return m_strInstData.c_str();
+        }
         void Load(const char* chrIn) override;
 
         void Update(uint32 uiDiff) override;
 
         // Arena Event
-        void SetArenaCenterCoords(float fX, float fY, float fZ) { m_fArenaCenterX = fX; m_fArenaCenterY = fY; m_fArenaCenterZ = fZ; }
-        void GetArenaCenterCoords(float& fX, float& fY, float& fZ) { fX = m_fArenaCenterX; fY = m_fArenaCenterY; fZ = m_fArenaCenterZ; }
+        void SetArenaCenterCoords(float fX, float fY, float fZ)
+        {
+            m_fArenaCenterX = fX;
+            m_fArenaCenterY = fY;
+            m_fArenaCenterZ = fZ;
+        }
+        void GetArenaCenterCoords(float& fX, float& fY, float& fZ)
+        {
+            fX = m_fArenaCenterX;
+            fY = m_fArenaCenterY;
+            fZ = m_fArenaCenterZ;
+        }
 
     private:
         void DoCallNextDwarf();

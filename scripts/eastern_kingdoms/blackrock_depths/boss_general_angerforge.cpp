@@ -45,7 +45,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_general_angerforgeAI : public ScriptedAI
 {
-    boss_general_angerforgeAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_general_angerforgeAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiMightyBlowTimer;
     uint32 m_uiHamStringTimer;

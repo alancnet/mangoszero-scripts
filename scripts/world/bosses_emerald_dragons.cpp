@@ -62,7 +62,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_emerald_dragonAI : public ScriptedAI
 {
-    boss_emerald_dragonAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_emerald_dragonAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiEventCounter;
 
@@ -106,7 +109,10 @@ struct MANGOS_DLL_DECL boss_emerald_dragonAI : public ScriptedAI
     virtual bool DoSpecialDragonAbility() = 0;
 
     // Return true to handle shared timers and MeleeAttack
-    virtual bool UpdateDragonAI(const uint32 /*uiDiff*/) { return true; }
+    virtual bool UpdateDragonAI(const uint32 /*uiDiff*/)
+    {
+        return true;
+    }
 
     void UpdateAI(const uint32 uiDiff) override
     {
@@ -167,7 +173,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_emerissAI : public boss_emerald_dragonAI
 {
-    boss_emerissAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature) { Reset(); }
+    boss_emerissAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiVolatileInfectionTimer;
 
@@ -295,7 +304,10 @@ struct MANGOS_DLL_DECL boss_lethonAI : public boss_emerald_dragonAI
 
 struct MANGOS_DLL_DECL npc_spirit_shadeAI : public ScriptedAI
 {
-    npc_spirit_shadeAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_spirit_shadeAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     bool m_bHasHealed;
 
@@ -355,7 +367,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_taerarAI : public boss_emerald_dragonAI
 {
-    boss_taerarAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature) { Reset(); }
+    boss_taerarAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiArcaneBlastTimer;
     uint32 m_uiBellowingRoarTimer;
@@ -485,7 +500,10 @@ enum
 // Ysondre script
 struct MANGOS_DLL_DECL boss_ysondreAI : public boss_emerald_dragonAI
 {
-    boss_ysondreAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature) { Reset(); }
+    boss_ysondreAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiLightningWaveTimer;
 

@@ -44,7 +44,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_ambassador_flamelashAI : public ScriptedAI
 {
-    boss_ambassador_flamelashAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_ambassador_flamelashAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiSpiritTimer;
     int Rand;

@@ -59,7 +59,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_00x09hlAI : public npc_escortAI
 {
-    npc_00x09hlAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_00x09hlAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 

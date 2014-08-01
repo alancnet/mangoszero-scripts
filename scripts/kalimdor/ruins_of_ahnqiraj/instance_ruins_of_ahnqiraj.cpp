@@ -84,11 +84,21 @@ void instance_ruins_of_ahnqiraj::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KURINNAXX: SetData(TYPE_KURINNAXX, IN_PROGRESS); break;
-        case NPC_MOAM:      SetData(TYPE_MOAM, IN_PROGRESS);      break;
-        case NPC_BURU:      SetData(TYPE_BURU, IN_PROGRESS);      break;
-        case NPC_AYAMISS:   SetData(TYPE_AYAMISS, IN_PROGRESS);   break;
-        case NPC_OSSIRIAN:  SetData(TYPE_OSSIRIAN, IN_PROGRESS);  break;
+        case NPC_KURINNAXX:
+            SetData(TYPE_KURINNAXX, IN_PROGRESS);
+            break;
+        case NPC_MOAM:
+            SetData(TYPE_MOAM, IN_PROGRESS);
+            break;
+        case NPC_BURU:
+            SetData(TYPE_BURU, IN_PROGRESS);
+            break;
+        case NPC_AYAMISS:
+            SetData(TYPE_AYAMISS, IN_PROGRESS);
+            break;
+        case NPC_OSSIRIAN:
+            SetData(TYPE_OSSIRIAN, IN_PROGRESS);
+            break;
     }
 }
 
@@ -96,11 +106,21 @@ void instance_ruins_of_ahnqiraj::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KURINNAXX: SetData(TYPE_KURINNAXX, FAIL); break;
-        case NPC_MOAM:      SetData(TYPE_MOAM, FAIL);      break;
-        case NPC_BURU:      SetData(TYPE_BURU, FAIL);      break;
-        case NPC_AYAMISS:   SetData(TYPE_AYAMISS, FAIL);   break;
-        case NPC_OSSIRIAN:  SetData(TYPE_OSSIRIAN, FAIL);  break;
+        case NPC_KURINNAXX:
+            SetData(TYPE_KURINNAXX, FAIL);
+            break;
+        case NPC_MOAM:
+            SetData(TYPE_MOAM, FAIL);
+            break;
+        case NPC_BURU:
+            SetData(TYPE_BURU, FAIL);
+            break;
+        case NPC_AYAMISS:
+            SetData(TYPE_AYAMISS, FAIL);
+            break;
+        case NPC_OSSIRIAN:
+            SetData(TYPE_OSSIRIAN, FAIL);
+            break;
         case NPC_RAJAXX:
             // Rajaxx yells on evade
             DoScriptText(SAY_DEAGGRO, pCreature);
@@ -121,12 +141,24 @@ void instance_ruins_of_ahnqiraj::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KURINNAXX: SetData(TYPE_KURINNAXX, DONE); break;
-        case NPC_RAJAXX:    SetData(TYPE_RAJAXX, DONE);    break;
-        case NPC_MOAM:      SetData(TYPE_MOAM, DONE);      break;
-        case NPC_BURU:      SetData(TYPE_BURU, DONE);      break;
-        case NPC_AYAMISS:   SetData(TYPE_AYAMISS, DONE);   break;
-        case NPC_OSSIRIAN:  SetData(TYPE_OSSIRIAN, DONE);  break;
+        case NPC_KURINNAXX:
+            SetData(TYPE_KURINNAXX, DONE);
+            break;
+        case NPC_RAJAXX:
+            SetData(TYPE_RAJAXX, DONE);
+            break;
+        case NPC_MOAM:
+            SetData(TYPE_MOAM, DONE);
+            break;
+        case NPC_BURU:
+            SetData(TYPE_BURU, DONE);
+            break;
+        case NPC_AYAMISS:
+            SetData(TYPE_AYAMISS, DONE);
+            break;
+        case NPC_OSSIRIAN:
+            SetData(TYPE_OSSIRIAN, DONE);
+            break;
         case NPC_COLONEL_ZERRAN:
         case NPC_MAJOR_PAKKON:
         case NPC_MAJOR_YEGGETH:

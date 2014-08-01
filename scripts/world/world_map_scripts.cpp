@@ -67,7 +67,10 @@ InstanceData* GetInstanceData_world_map_eastern_kingdoms(Map* pMap)
  */
 struct MANGOS_DLL_DECL world_map_kalimdor : public ScriptedMap
 {
-    world_map_kalimdor(Map* pMap) : ScriptedMap(pMap) { Initialize(); }
+    world_map_kalimdor(Map* pMap) : ScriptedMap(pMap)
+    {
+        Initialize();
+    }
 
     uint8 m_uiMurkdeepAdds_KilledAddCount;
 

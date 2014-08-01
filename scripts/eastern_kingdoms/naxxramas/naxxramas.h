@@ -215,7 +215,10 @@ class MANGOS_DLL_DECL instance_naxxramas : public ScriptedInstance
         void SetData(uint32 uiType, uint32 uiData) override;
         uint32 GetData(uint32 uiType) const override;
 
-        const char* Save() const override { return m_strInstData.c_str(); }
+        const char* Save() const override
+        {
+            return m_strInstData.c_str();
+        }
         void Load(const char* chrIn) override;
 
         void Update(uint32 uiDiff) override;
@@ -230,11 +233,19 @@ class MANGOS_DLL_DECL instance_naxxramas : public ScriptedInstance
         bool IsInRightSideGothArea(Unit* pUnit);
 
         // thaddius
-        void GetThadTeslaCreatures(GuidList& lList) { lList = m_lThadTeslaCoilList; };
+        void GetThadTeslaCreatures(GuidList& lList)
+        {
+            lList = m_lThadTeslaCoilList;
+        };
 
         // kel
         void SetChamberCenterCoords(float fX, float fY, float fZ);
-        void GetChamberCenterCoords(float& fX, float& fY, float& fZ) { fX = m_fChamberCenterX; fY = m_fChamberCenterY; fZ = m_fChamberCenterZ; }
+        void GetChamberCenterCoords(float& fX, float& fY, float& fZ)
+        {
+            fX = m_fChamberCenterX;
+            fY = m_fChamberCenterY;
+            fZ = m_fChamberCenterZ;
+        }
         void DoTaunt();
 
     protected:

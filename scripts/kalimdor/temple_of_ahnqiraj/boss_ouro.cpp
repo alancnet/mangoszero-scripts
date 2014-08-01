@@ -265,7 +265,10 @@ CreatureAI* GetAI_boss_ouro(Creature* pCreature)
 
 struct MANGOS_DLL_DECL npc_ouro_spawnerAI : public Scripted_NoMovementAI
 {
-    npc_ouro_spawnerAI(Creature* pCreature) : Scripted_NoMovementAI(pCreature) {Reset();}
+    npc_ouro_spawnerAI(Creature* pCreature) : Scripted_NoMovementAI(pCreature)
+    {
+        Reset();
+    }
 
     bool m_bHasSummoned;
 

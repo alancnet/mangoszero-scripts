@@ -232,13 +232,20 @@ struct MANGOS_DLL_DECL boss_kelthuzadAI : public ScriptedAI
     {
         switch (uiId)
         {
-            case 1: return M_PI_F - M_F_ANGLE;              // south
-            case 2: return M_PI_F / 2 * 3 - M_F_ANGLE;      // east
-            case 3: return M_PI_F / 2 - M_F_ANGLE;          // west
-            case 4: return M_PI_F / 4 - M_F_ANGLE;          // north-west
-            case 5: return M_PI_F / 4 * 7 - M_F_ANGLE;      // north-east
-            case 6: return M_PI_F / 4 * 5 - M_F_ANGLE;      // south-east
-            case 7: return M_PI_F / 4 * 3 - M_F_ANGLE;      // south-west
+            case 1:
+                return M_PI_F - M_F_ANGLE;              // south
+            case 2:
+                return M_PI_F / 2 * 3 - M_F_ANGLE;      // east
+            case 3:
+                return M_PI_F / 2 - M_F_ANGLE;          // west
+            case 4:
+                return M_PI_F / 4 - M_F_ANGLE;          // north-west
+            case 5:
+                return M_PI_F / 4 * 7 - M_F_ANGLE;      // north-east
+            case 6:
+                return M_PI_F / 4 * 5 - M_F_ANGLE;      // south-east
+            case 7:
+                return M_PI_F / 4 * 3 - M_F_ANGLE;      // south-west
         }
 
         return M_F_ANGLE;
@@ -397,9 +404,15 @@ struct MANGOS_DLL_DECL boss_kelthuzadAI : public ScriptedAI
 
                     switch (urand(0, 2))
                     {
-                        case 0: DoScriptText(SAY_AGGRO1, m_creature); break;
-                        case 1: DoScriptText(SAY_AGGRO2, m_creature); break;
-                        case 2: DoScriptText(SAY_AGGRO3, m_creature); break;
+                        case 0:
+                            DoScriptText(SAY_AGGRO1, m_creature);
+                            break;
+                        case 1:
+                            DoScriptText(SAY_AGGRO2, m_creature);
+                            break;
+                        case 2:
+                            DoScriptText(SAY_AGGRO3, m_creature);
+                            break;
                     };
                 }
                 else

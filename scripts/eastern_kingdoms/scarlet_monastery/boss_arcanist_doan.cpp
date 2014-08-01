@@ -47,7 +47,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_arcanist_doanAI : public ScriptedAI
 {
-    boss_arcanist_doanAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_arcanist_doanAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiPolymorphTimer;
     uint32 m_uiSilenceTimer;

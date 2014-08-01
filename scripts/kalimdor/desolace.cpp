@@ -66,7 +66,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_aged_dying_ancient_kodoAI : public ScriptedAI
 {
-    npc_aged_dying_ancient_kodoAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_aged_dying_ancient_kodoAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiDespawnTimer;
 
@@ -86,9 +89,15 @@ struct MANGOS_DLL_DECL npc_aged_dying_ancient_kodoAI : public ScriptedAI
             {
                 switch (urand(0, 2))
                 {
-                    case 0: DoScriptText(SAY_SMEED_HOME_1, pWho); break;
-                    case 1: DoScriptText(SAY_SMEED_HOME_2, pWho); break;
-                    case 2: DoScriptText(SAY_SMEED_HOME_3, pWho); break;
+                    case 0:
+                        DoScriptText(SAY_SMEED_HOME_1, pWho);
+                        break;
+                    case 1:
+                        DoScriptText(SAY_SMEED_HOME_2, pWho);
+                        break;
+                    case 2:
+                        DoScriptText(SAY_SMEED_HOME_3, pWho);
+                        break;
                 }
 
                 // spell have no implemented effect (dummy), so useful to notify spellHit
@@ -189,7 +198,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_dalinda_malemAI : public npc_escortAI
 {
-    npc_dalinda_malemAI(Creature* m_creature) : npc_escortAI(m_creature) { Reset(); }
+    npc_dalinda_malemAI(Creature* m_creature) : npc_escortAI(m_creature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 

@@ -203,7 +203,10 @@ struct MANGOS_DLL_DECL boss_sarturaAI : public ScriptedAI
 
 struct MANGOS_DLL_DECL mob_sartura_royal_guardAI : public ScriptedAI
 {
-    mob_sartura_royal_guardAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    mob_sartura_royal_guardAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiWhirlWindTimer;
     uint32 m_uiWhirlWindRandomTimer;

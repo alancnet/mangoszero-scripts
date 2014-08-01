@@ -96,7 +96,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_giltharesAI : public npc_escortAI
 {
-    npc_giltharesAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_giltharesAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 
@@ -143,10 +146,18 @@ struct MANGOS_DLL_DECL npc_giltharesAI : public npc_escortAI
             // appears to be pretty much random (possible only if escorter not in combat with pWho yet?)
             switch (urand(0, 3))
             {
-                case 0: DoScriptText(SAY_GIL_AGGRO_1, m_creature, pWho); break;
-                case 1: DoScriptText(SAY_GIL_AGGRO_2, m_creature, pWho); break;
-                case 2: DoScriptText(SAY_GIL_AGGRO_3, m_creature, pWho); break;
-                case 3: DoScriptText(SAY_GIL_AGGRO_4, m_creature, pWho); break;
+                case 0:
+                    DoScriptText(SAY_GIL_AGGRO_1, m_creature, pWho);
+                    break;
+                case 1:
+                    DoScriptText(SAY_GIL_AGGRO_2, m_creature, pWho);
+                    break;
+                case 2:
+                    DoScriptText(SAY_GIL_AGGRO_3, m_creature, pWho);
+                    break;
+                case 3:
+                    DoScriptText(SAY_GIL_AGGRO_4, m_creature, pWho);
+                    break;
             }
         }
     }
@@ -185,7 +196,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_taskmaster_fizzuleAI : public ScriptedAI
 {
-    npc_taskmaster_fizzuleAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_taskmaster_fizzuleAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiResetTimer;
     uint8 m_uiFlareCount;
@@ -298,7 +312,10 @@ static const float aAffrayChallengerLoc[8][4] =
 
 struct MANGOS_DLL_DECL npc_twiggy_flatheadAI : public ScriptedAI
 {
-    npc_twiggy_flatheadAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_twiggy_flatheadAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     bool m_bIsEventInProgress;
 

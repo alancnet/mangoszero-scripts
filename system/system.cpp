@@ -129,7 +129,7 @@ void SystemMgr::LoadScriptWaypoints()
 
             if (!pCInfo)
             {
-                error_db_log("SD2: DB table script_waypoint has waypoint for nonexistent creature entry %u", pTemp.uiCreatureEntry);
+                error_db_log("SD2: DB table script_waypoint has waypoint for non-existent creature entry %u", pTemp.uiCreatureEntry);
                 continue;
             }
 

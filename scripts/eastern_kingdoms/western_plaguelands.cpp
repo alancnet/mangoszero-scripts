@@ -43,7 +43,10 @@ EndContentData */
 
 struct MANGOS_DLL_DECL npc_the_scourge_cauldronAI : public ScriptedAI
 {
-    npc_the_scourge_cauldronAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    npc_the_scourge_cauldronAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 

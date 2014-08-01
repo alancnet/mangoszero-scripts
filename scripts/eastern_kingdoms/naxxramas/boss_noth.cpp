@@ -125,9 +125,15 @@ struct MANGOS_DLL_DECL boss_nothAI : public ScriptedAI
     {
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(SAY_AGGRO1, m_creature); break;
-            case 1: DoScriptText(SAY_AGGRO2, m_creature); break;
-            case 2: DoScriptText(SAY_AGGRO3, m_creature); break;
+            case 0:
+                DoScriptText(SAY_AGGRO1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_AGGRO2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_AGGRO3, m_creature);
+                break;
         }
 
         if (m_pInstance)
@@ -184,9 +190,15 @@ struct MANGOS_DLL_DECL boss_nothAI : public ScriptedAI
 
                         switch (m_uiPhaseSub)               // Set Duration of Skeleton phase
                         {
-                            case PHASE_SKELETON_1: m_uiPhaseTimer = 70000;  break;
-                            case PHASE_SKELETON_2: m_uiPhaseTimer = 97000;  break;
-                            case PHASE_SKELETON_3: m_uiPhaseTimer = 120000; break;
+                            case PHASE_SKELETON_1:
+                                m_uiPhaseTimer = 70000;
+                                break;
+                            case PHASE_SKELETON_2:
+                                m_uiPhaseTimer = 97000;
+                                break;
+                            case PHASE_SKELETON_3:
+                                m_uiPhaseTimer = 120000;
+                                break;
                         }
                         return;
                     }
@@ -257,8 +269,12 @@ struct MANGOS_DLL_DECL boss_nothAI : public ScriptedAI
                     m_creature->GetMotionMaster()->MoveChase(m_creature->getVictim());
                     switch (m_uiPhaseSub)
                     {
-                        case PHASE_SKELETON_1: m_uiPhaseTimer = 110000; break;
-                        case PHASE_SKELETON_2: m_uiPhaseTimer = 180000; break;
+                        case PHASE_SKELETON_1:
+                            m_uiPhaseTimer = 110000;
+                            break;
+                        case PHASE_SKELETON_2:
+                            m_uiPhaseTimer = 180000;
+                            break;
                         case PHASE_SKELETON_3:
                             m_uiPhaseTimer = 0;
                             // Go Berserk after third Balcony Phase

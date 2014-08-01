@@ -43,7 +43,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_cannon_master_willeyAI : public ScriptedAI
 {
-    boss_cannon_master_willeyAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_cannon_master_willeyAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiKnockAwayTimer;
     uint32 m_uiPummelTimer;

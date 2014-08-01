@@ -122,9 +122,16 @@ class DialogueHelper
         DialogueHelper(DialogueEntryTwoSide const* aDialogueTwoSide);
 
         /// Function to initialize the dialogue helper for instances. If not used with instances, GetSpeakerByEntry MUST be overwritten to obtain the speakers
-        void InitializeDialogueHelper(ScriptedInstance* pInstance, bool bCanSimulateText = false) { m_pInstance = pInstance; m_bCanSimulate = bCanSimulateText; }
+        void InitializeDialogueHelper(ScriptedInstance* pInstance, bool bCanSimulateText = false)
+        {
+            m_pInstance = pInstance;
+            m_bCanSimulate = bCanSimulateText;
+        }
         /// Set if take first entries or second entries
-        void SetDialogueSide(bool bIsFirstSide) { m_bIsFirstSide = bIsFirstSide; }
+        void SetDialogueSide(bool bIsFirstSide)
+        {
+            m_bIsFirstSide = bIsFirstSide;
+        }
 
         void StartNextDialogueText(int32 iTextEntry);
 
@@ -134,7 +141,10 @@ class DialogueHelper
         /// Will be called when a dialogue step was done
         virtual void JustDidDialogueStep(int32 /*iEntry*/) {}
         /// Will be called to get a speaker, MUST be implemented if not used in instances
-        virtual Creature* GetSpeakerByEntry(uint32 /*uiEntry*/) { return NULL; }
+        virtual Creature* GetSpeakerByEntry(uint32 /*uiEntry*/)
+        {
+            return NULL;
+        }
 
     private:
         void DoNextDialogueStep();

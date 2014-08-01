@@ -87,7 +87,10 @@ static const int32 aPeasantSpawnYells[3] = {SAY_PEASANT_APPEAR_1, SAY_PEASANT_AP
 
 struct MANGOS_DLL_DECL npc_eris_havenfireAI : public ScriptedAI
 {
-    npc_eris_havenfireAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_eris_havenfireAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiEventTimer;
     uint32 m_uiSadEndTimer;

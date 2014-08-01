@@ -251,14 +251,30 @@ void instance_temple_of_ahnqiraj::Update(uint32 uiDiff)
                 // ToDo: also cast the C'thun Whispering charm spell - requires additional research
                 switch (urand(0, 7))
                 {
-                    case 0: DoScriptText(SAY_CTHUN_WHISPER_1, pCthun, pPlayer); break;
-                    case 1: DoScriptText(SAY_CTHUN_WHISPER_2, pCthun, pPlayer); break;
-                    case 2: DoScriptText(SAY_CTHUN_WHISPER_3, pCthun, pPlayer); break;
-                    case 3: DoScriptText(SAY_CTHUN_WHISPER_4, pCthun, pPlayer); break;
-                    case 4: DoScriptText(SAY_CTHUN_WHISPER_5, pCthun, pPlayer); break;
-                    case 5: DoScriptText(SAY_CTHUN_WHISPER_6, pCthun, pPlayer); break;
-                    case 6: DoScriptText(SAY_CTHUN_WHISPER_7, pCthun, pPlayer); break;
-                    case 7: DoScriptText(SAY_CTHUN_WHISPER_8, pCthun, pPlayer); break;
+                    case 0:
+                        DoScriptText(SAY_CTHUN_WHISPER_1, pCthun, pPlayer);
+                        break;
+                    case 1:
+                        DoScriptText(SAY_CTHUN_WHISPER_2, pCthun, pPlayer);
+                        break;
+                    case 2:
+                        DoScriptText(SAY_CTHUN_WHISPER_3, pCthun, pPlayer);
+                        break;
+                    case 3:
+                        DoScriptText(SAY_CTHUN_WHISPER_4, pCthun, pPlayer);
+                        break;
+                    case 4:
+                        DoScriptText(SAY_CTHUN_WHISPER_5, pCthun, pPlayer);
+                        break;
+                    case 5:
+                        DoScriptText(SAY_CTHUN_WHISPER_6, pCthun, pPlayer);
+                        break;
+                    case 6:
+                        DoScriptText(SAY_CTHUN_WHISPER_7, pCthun, pPlayer);
+                        break;
+                    case 7:
+                        DoScriptText(SAY_CTHUN_WHISPER_8, pCthun, pPlayer);
+                        break;
                 }
             }
         }

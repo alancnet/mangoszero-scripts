@@ -105,7 +105,10 @@ class MANGOS_DLL_DECL instance_blackwing_lair : public ScriptedInstance
 
         void SetData64(uint32 uiData, uint64 uiGuid) override;
 
-        const char* Save() const override { return m_strInstData.c_str(); }
+        const char* Save() const override
+        {
+            return m_strInstData.c_str();
+        }
         void Load(const char* chrIn) override;
 
         void Update(uint32 uiDiff) override;

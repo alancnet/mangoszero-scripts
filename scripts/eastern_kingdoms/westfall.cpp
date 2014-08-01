@@ -74,9 +74,15 @@ struct MANGOS_DLL_DECL npc_daphne_stilwellAI : public npc_escortAI
         {
             switch (m_uiWPHolder)
             {
-                case 7: DoScriptText(SAY_DS_DOWN_1, m_creature); break;
-                case 8: DoScriptText(SAY_DS_DOWN_2, m_creature); break;
-                case 9: DoScriptText(SAY_DS_DOWN_3, m_creature); break;
+                case 7:
+                    DoScriptText(SAY_DS_DOWN_1, m_creature);
+                    break;
+                case 8:
+                    DoScriptText(SAY_DS_DOWN_2, m_creature);
+                    break;
+                case 9:
+                    DoScriptText(SAY_DS_DOWN_3, m_creature);
+                    break;
             }
         }
         else
@@ -208,7 +214,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_defias_traitorAI : public npc_escortAI
 {
-    npc_defias_traitorAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_defias_traitorAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void WaypointReached(uint32 uiPointId) override
     {

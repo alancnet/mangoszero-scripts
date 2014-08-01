@@ -264,7 +264,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_ruul_snowhoofAI : public npc_escortAI
 {
-    npc_ruul_snowhoofAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_ruul_snowhoofAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 
@@ -338,7 +341,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_torekAI : public npc_escortAI
 {
-    npc_torekAI(Creature* pCreature) : npc_escortAI(pCreature) {Reset();}
+    npc_torekAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiRend_Timer;
     uint32 m_uiThunderclap_Timer;

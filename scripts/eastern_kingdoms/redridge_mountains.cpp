@@ -57,7 +57,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_corporal_keeshan_escortAI : public npc_escortAI
 {
-    npc_corporal_keeshan_escortAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_corporal_keeshan_escortAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiMockingBlowTimer;
     uint32 m_uiShieldBashTimer;

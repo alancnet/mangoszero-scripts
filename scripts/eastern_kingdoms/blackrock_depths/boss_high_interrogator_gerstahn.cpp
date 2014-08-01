@@ -43,7 +43,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_high_interrogator_gerstahnAI : public ScriptedAI
 {
-    boss_high_interrogator_gerstahnAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_high_interrogator_gerstahnAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiShadowWordPainTimer;
     uint32 m_uiManaBurnTimer;

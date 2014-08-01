@@ -50,7 +50,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_azuregosAI : public ScriptedAI
 {
-    boss_azuregosAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_azuregosAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiManaStormTimer;
     uint32 m_uiChillTimer;

@@ -42,7 +42,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_jandicebarovAI : public ScriptedAI
 {
-    boss_jandicebarovAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_jandicebarovAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiCurseOfBloodTimer;
     uint32 m_uiIllusionTimer;

@@ -98,13 +98,19 @@ struct MANGOS_DLL_DECL npc_escortAI : public ScriptedAI
         void SetRun(bool bRun = true);
         void SetEscortPaused(bool uPaused);
 
-        bool HasEscortState(uint32 uiEscortState) { return (m_uiEscortState & uiEscortState); }
+        bool HasEscortState(uint32 uiEscortState)
+        {
+            return (m_uiEscortState & uiEscortState);
+        }
 
         // update current point
         void SetCurrentWaypoint(uint32 uiPointId);
 
     protected:
-        Player* GetPlayerForEscort() { return m_creature->GetMap()->GetPlayer(m_playerGuid); }
+        Player* GetPlayerForEscort()
+        {
+            return m_creature->GetMap()->GetPlayer(m_playerGuid);
+        }
         virtual void JustStartedEscort() {}
 
     private:
@@ -113,8 +119,14 @@ struct MANGOS_DLL_DECL npc_escortAI : public ScriptedAI
         bool MoveToNextWaypoint();
         void FillPointMovementListForCreature();
 
-        void AddEscortState(uint32 uiEscortState) { m_uiEscortState |= uiEscortState; }
-        void RemoveEscortState(uint32 uiEscortState) { m_uiEscortState &= ~uiEscortState; }
+        void AddEscortState(uint32 uiEscortState)
+        {
+            m_uiEscortState |= uiEscortState;
+        }
+        void RemoveEscortState(uint32 uiEscortState)
+        {
+            m_uiEscortState &= ~uiEscortState;
+        }
 
         ObjectGuid m_playerGuid;
         uint32 m_uiWPWaitTimer;

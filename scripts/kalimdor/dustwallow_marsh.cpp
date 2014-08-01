@@ -487,7 +487,10 @@ enum
 // TODO: develop this further, end event not created
 struct MANGOS_DLL_DECL npc_private_hendelAI : public ScriptedAI
 {
-    npc_private_hendelAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_private_hendelAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 

@@ -286,8 +286,10 @@ struct MANGOS_DLL_DECL npc_keeper_remulosAI : public npc_escortAI, private Dialo
     {
         switch (uiEntry)
         {
-            case NPC_REMULOS:         return m_creature;
-            case NPC_ERANIKUS_TYRANT: return m_creature->GetMap()->GetCreature(m_eranikusGuid);
+            case NPC_REMULOS:
+                return m_creature;
+            case NPC_ERANIKUS_TYRANT:
+                return m_creature->GetMap()->GetCreature(m_eranikusGuid);
 
             default:
                 return NULL;
@@ -429,9 +431,15 @@ struct MANGOS_DLL_DECL npc_keeper_remulosAI : public npc_escortAI, private Dialo
             {
                 switch (urand(0, 2))
                 {
-                    case 0: DoCastSpellIfCan(pTarget, SPELL_HEALING_TOUCH); break;
-                    case 1: DoCastSpellIfCan(pTarget, SPELL_REJUVENATION);  break;
-                    case 2: DoCastSpellIfCan(pTarget, SPELL_REGROWTH);      break;
+                    case 0:
+                        DoCastSpellIfCan(pTarget, SPELL_HEALING_TOUCH);
+                        break;
+                    case 1:
+                        DoCastSpellIfCan(pTarget, SPELL_REJUVENATION);
+                        break;
+                    case 2:
+                        DoCastSpellIfCan(pTarget, SPELL_REGROWTH);
+                        break;
                 }
             }
             m_uiHealTimer = 10000;
@@ -509,7 +517,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_eranikusAI : public ScriptedAI
 {
-    boss_eranikusAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_eranikusAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiAcidBreathTimer;
     uint32 m_uiNoxiousBreathTimer;

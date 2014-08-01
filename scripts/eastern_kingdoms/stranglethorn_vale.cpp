@@ -52,11 +52,17 @@ enum
 
 struct MANGOS_DLL_DECL mob_yennikuAI : public ScriptedAI
 {
-    mob_yennikuAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    mob_yennikuAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiResetTimer;
 
-    void Reset() override { m_uiResetTimer = 0; }
+    void Reset() override
+    {
+        m_uiResetTimer = 0;
+    }
 
     void SpellHit(Unit* pCaster, const SpellEntry* pSpell) override
     {

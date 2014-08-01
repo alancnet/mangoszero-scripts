@@ -53,7 +53,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_mistAI : public FollowerAI
 {
-    npc_mistAI(Creature* pCreature) : FollowerAI(pCreature) { Reset(); }
+    npc_mistAI(Creature* pCreature) : FollowerAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 

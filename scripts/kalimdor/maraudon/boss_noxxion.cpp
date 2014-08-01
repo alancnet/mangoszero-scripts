@@ -43,7 +43,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_noxxionAI : public ScriptedAI
 {
-    boss_noxxionAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_noxxionAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiToxicVolleyTimer;
     uint32 m_uiUppercutTimer;

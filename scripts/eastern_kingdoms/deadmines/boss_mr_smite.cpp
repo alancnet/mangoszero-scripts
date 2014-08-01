@@ -60,7 +60,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_mr_smiteAI : public ScriptedAI
 {
-    boss_mr_smiteAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_mr_smiteAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiPhase;
     uint32 m_uiEquipTimer;

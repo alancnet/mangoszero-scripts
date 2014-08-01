@@ -60,7 +60,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_kazzakAI : public ScriptedAI
 {
-    boss_kazzakAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_kazzakAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiShadowVolleyTimer;
     uint32 m_uiCleaveTimer;
@@ -99,9 +102,15 @@ struct MANGOS_DLL_DECL boss_kazzakAI : public ScriptedAI
 
         switch (urand(0, 3))
         {
-            case 0: DoScriptText(SAY_KILL1, m_creature); break;
-            case 1: DoScriptText(SAY_KILL2, m_creature); break;
-            case 2: DoScriptText(SAY_KILL3, m_creature); break;
+            case 0:
+                DoScriptText(SAY_KILL1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_KILL2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_KILL3, m_creature);
+                break;
         }
     }
 

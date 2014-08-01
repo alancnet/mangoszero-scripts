@@ -63,7 +63,10 @@ enum
 struct MANGOS_DLL_DECL example_escortAI : public npc_escortAI
 {
     // CreatureAI functions
-    example_escortAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    example_escortAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiDeathCoilTimer;
     uint32 m_uiChatTimer;

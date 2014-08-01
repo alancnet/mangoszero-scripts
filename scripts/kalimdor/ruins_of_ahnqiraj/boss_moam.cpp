@@ -53,7 +53,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_moamAI : public ScriptedAI
 {
-    boss_moamAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    boss_moamAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint8 m_uiPhase;
 

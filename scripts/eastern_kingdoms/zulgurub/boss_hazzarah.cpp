@@ -45,7 +45,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_hazzarahAI : public ScriptedAI
 {
-    boss_hazzarahAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_hazzarahAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiManaBurnTimer;
     uint32 m_uiSleepTimer;

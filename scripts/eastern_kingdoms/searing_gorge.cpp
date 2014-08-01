@@ -55,7 +55,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_dorius_stonetenderAI : public npc_escortAI
 {
-    npc_dorius_stonetenderAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_dorius_stonetenderAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 

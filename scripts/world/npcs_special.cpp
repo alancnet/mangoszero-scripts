@@ -64,7 +64,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_chicken_cluckAI : public ScriptedAI
 {
-    npc_chicken_cluckAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    npc_chicken_cluckAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiResetFlagTimer;
 
@@ -228,7 +231,10 @@ const uint32 HordeSoldierId[3] =
 
 struct MANGOS_DLL_DECL npc_doctorAI : public ScriptedAI
 {
-    npc_doctorAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    npc_doctorAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     ObjectGuid m_playerGuid;
 
@@ -271,7 +277,10 @@ struct MANGOS_DLL_DECL npc_doctorAI : public ScriptedAI
 
 struct MANGOS_DLL_DECL npc_injured_patientAI : public ScriptedAI
 {
-    npc_injured_patientAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    npc_injured_patientAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     ObjectGuid m_doctorGuid;
     Location* m_pCoord;
@@ -328,9 +337,15 @@ struct MANGOS_DLL_DECL npc_injured_patientAI : public ScriptedAI
 
             switch (urand(0, 2))
             {
-                case 0: DoScriptText(SAY_DOC1, m_creature); break;
-                case 1: DoScriptText(SAY_DOC2, m_creature); break;
-                case 2: DoScriptText(SAY_DOC3, m_creature); break;
+                case 0:
+                    DoScriptText(SAY_DOC1, m_creature);
+                    break;
+                case 1:
+                    DoScriptText(SAY_DOC2, m_creature);
+                    break;
+                case 2:
+                    DoScriptText(SAY_DOC3, m_creature);
+                    break;
             }
 
             m_creature->SetWalk(false);
@@ -483,8 +498,12 @@ void npc_doctorAI::UpdateAI(const uint32 uiDiff)
 
             switch (m_creature->GetEntry())
             {
-                case DOCTOR_ALLIANCE: patientEntry = AllianceSoldierId[urand(0, 2)]; break;
-                case DOCTOR_HORDE:    patientEntry = HordeSoldierId[urand(0, 2)];    break;
+                case DOCTOR_ALLIANCE:
+                    patientEntry = AllianceSoldierId[urand(0, 2)];
+                    break;
+                case DOCTOR_HORDE:
+                    patientEntry = HordeSoldierId[urand(0, 2)];
+                    break;
                 default:
                     script_error_log("Invalid entry for Triage doctor. Please check your database");
                     return;
@@ -564,7 +583,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_garments_of_questsAI : public npc_escortAI
 {
-    npc_garments_of_questsAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_garments_of_questsAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     ObjectGuid m_playerGuid;
 
@@ -709,11 +731,21 @@ struct MANGOS_DLL_DECL npc_garments_of_questsAI : public npc_escortAI
                 {
                     switch (m_creature->GetEntry())
                     {
-                        case ENTRY_SHAYA:   DoScriptText(SAY_SHAYA_GOODBYE, m_creature, pPlayer);   break;
-                        case ENTRY_ROBERTS: DoScriptText(SAY_ROBERTS_GOODBYE, m_creature, pPlayer); break;
-                        case ENTRY_DOLF:    DoScriptText(SAY_DOLF_GOODBYE, m_creature, pPlayer);    break;
-                        case ENTRY_KORJA:   DoScriptText(SAY_KORJA_GOODBYE, m_creature, pPlayer);   break;
-                        case ENTRY_DG_KEL:  DoScriptText(SAY_DG_KEL_GOODBYE, m_creature, pPlayer);  break;
+                        case ENTRY_SHAYA:
+                            DoScriptText(SAY_SHAYA_GOODBYE, m_creature, pPlayer);
+                            break;
+                        case ENTRY_ROBERTS:
+                            DoScriptText(SAY_ROBERTS_GOODBYE, m_creature, pPlayer);
+                            break;
+                        case ENTRY_DOLF:
+                            DoScriptText(SAY_DOLF_GOODBYE, m_creature, pPlayer);
+                            break;
+                        case ENTRY_KORJA:
+                            DoScriptText(SAY_KORJA_GOODBYE, m_creature, pPlayer);
+                            break;
+                        case ENTRY_DG_KEL:
+                            DoScriptText(SAY_DG_KEL_GOODBYE, m_creature, pPlayer);
+                            break;
                     }
 
                     Start(true);
@@ -747,7 +779,10 @@ CreatureAI* GetAI_npc_garments_of_quests(Creature* pCreature)
 
 struct MANGOS_DLL_DECL npc_guardianAI : public ScriptedAI
 {
-    npc_guardianAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    npc_guardianAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override
     {
@@ -852,7 +887,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_redemption_targetAI : public ScriptedAI
 {
-    npc_redemption_targetAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_redemption_targetAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiEvadeTimer;
     uint32 m_uiHealTimer;

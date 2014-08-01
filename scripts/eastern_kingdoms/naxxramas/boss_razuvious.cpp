@@ -80,8 +80,12 @@ struct MANGOS_DLL_DECL boss_razuviousAI : public ScriptedAI
 
         switch (urand(0, 1))
         {
-            case 0: DoScriptText(SAY_SLAY1, m_creature); break;
-            case 1: DoScriptText(SAY_SLAY2, m_creature); break;
+            case 0:
+                DoScriptText(SAY_SLAY1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_SLAY2, m_creature);
+                break;
         }
     }
 
@@ -99,9 +103,15 @@ struct MANGOS_DLL_DECL boss_razuviousAI : public ScriptedAI
     {
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(SAY_AGGRO1, m_creature); break;
-            case 1: DoScriptText(SAY_AGGRO2, m_creature); break;
-            case 2: DoScriptText(SAY_AGGRO3, m_creature); break;
+            case 0:
+                DoScriptText(SAY_AGGRO1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_AGGRO2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_AGGRO3, m_creature);
+                break;
         }
 
         if (m_pInstance)
@@ -142,10 +152,18 @@ struct MANGOS_DLL_DECL boss_razuviousAI : public ScriptedAI
         {
             switch (urand(0, 3))
             {
-                case 0: DoScriptText(SAY_COMMAND1, m_creature); break;
-                case 1: DoScriptText(SAY_COMMAND2, m_creature); break;
-                case 2: DoScriptText(SAY_COMMAND3, m_creature); break;
-                case 3: DoScriptText(SAY_COMMAND4, m_creature); break;
+                case 0:
+                    DoScriptText(SAY_COMMAND1, m_creature);
+                    break;
+                case 1:
+                    DoScriptText(SAY_COMMAND2, m_creature);
+                    break;
+                case 2:
+                    DoScriptText(SAY_COMMAND3, m_creature);
+                    break;
+                case 3:
+                    DoScriptText(SAY_COMMAND4, m_creature);
+                    break;
             }
 
             m_uiCommandSoundTimer = 40000;

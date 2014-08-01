@@ -59,7 +59,10 @@ enum Galen
 
 struct MANGOS_DLL_DECL npc_galen_goodwardAI : public npc_escortAI
 {
-    npc_galen_goodwardAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_galen_goodwardAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     ObjectGuid m_galensCageGuid;
     uint32 m_uiPeriodicSay;
