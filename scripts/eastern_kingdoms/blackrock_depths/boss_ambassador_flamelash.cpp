@@ -57,6 +57,9 @@ struct boss_ambassador_flamelashAI : public ScriptedAI
     void Reset() override
     {
         m_uiSpiritTimer = 12000;
+        Rand = 0;
+        RandX = 0;
+        RandY = 0;
     }
 
     void SummonSpirits()
