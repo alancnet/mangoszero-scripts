@@ -75,7 +75,7 @@ enum
 };
 
 // TODO: make concept similar as "ringo" -escort. Find a way to run the scripted attacks, _if_ player are choosing road.
-struct MANGOS_DLL_DECL npc_kerlonianAI : public FollowerAI
+struct npc_kerlonianAI : public FollowerAI
 {
     npc_kerlonianAI(Creature* pCreature) : FollowerAI(pCreature)
     {
@@ -234,7 +234,7 @@ enum
     NPC_GRAVEL_GEO              = 2160
 };
 
-struct MANGOS_DLL_DECL npc_prospector_remtravelAI : public npc_escortAI
+struct npc_prospector_remtravelAI : public npc_escortAI
 {
     npc_prospector_remtravelAI(Creature* pCreature) : npc_escortAI(pCreature)
     {
@@ -352,7 +352,7 @@ enum
 
 #define GOSSIP_ITEM_INSERT_KEY  "[PH] Insert key"
 
-struct MANGOS_DLL_DECL npc_threshwackonatorAI : public FollowerAI
+struct npc_threshwackonatorAI : public FollowerAI
 {
     npc_threshwackonatorAI(Creature* pCreature) : FollowerAI(pCreature)
     {
@@ -459,7 +459,7 @@ static const SummonLocation aVolcorSpawnLocs[] =
     {4711.7f, 109.1f, 53.5f, 2.4f},
 };
 
-struct MANGOS_DLL_DECL npc_volcorAI : public npc_escortAI
+struct npc_volcorAI : public npc_escortAI
 {
     npc_volcorAI(Creature* pCreature) : npc_escortAI(pCreature)
     {
@@ -603,7 +603,7 @@ enum
     QUEST_ID_THERYLUNE_ESCAPE        = 945,
 };
 
-struct MANGOS_DLL_DECL npc_theryluneAI : public npc_escortAI
+struct npc_theryluneAI : public npc_escortAI
 {
     npc_theryluneAI(Creature* pCreature) : npc_escortAI(pCreature)
     {
@@ -664,7 +664,7 @@ enum
     SPELL_RABIES                    = 3150,                 // Spell used in comabt
 };
 
-struct MANGOS_DLL_DECL npc_rabid_bearAI : public ScriptedAI
+struct npc_rabid_bearAI : public ScriptedAI
 {
     npc_rabid_bearAI(Creature* pCreature) : ScriptedAI(pCreature)
     {

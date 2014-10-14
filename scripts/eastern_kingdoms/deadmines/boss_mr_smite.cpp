@@ -58,7 +58,7 @@ enum
     PHASE_EQUIP_END                 = 7,
 };
 
-struct MANGOS_DLL_DECL boss_mr_smiteAI : public ScriptedAI
+struct boss_mr_smiteAI : public ScriptedAI
 {
     boss_mr_smiteAI(Creature* pCreature) : ScriptedAI(pCreature)
     {

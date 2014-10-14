@@ -51,7 +51,7 @@ enum
     NPC_ZULIAN_PROWLER          = 15101
 };
 
-struct MANGOS_DLL_DECL boss_arlokkAI : public ScriptedAI
+struct boss_arlokkAI : public ScriptedAI
 {
     boss_arlokkAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
