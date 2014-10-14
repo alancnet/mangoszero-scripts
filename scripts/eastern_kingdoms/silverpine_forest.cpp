@@ -196,6 +196,7 @@ struct npc_deathstalker_faerleiaAI : public ScriptedAI
 {
     npc_deathstalker_faerleiaAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
+        m_bEventStarted = false;
         Reset();
     }
 

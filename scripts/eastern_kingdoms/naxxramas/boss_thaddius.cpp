@@ -295,6 +295,7 @@ struct npc_tesla_coilAI : public Scripted_NoMovementAI
         m_uiSetupTimer = 1 * IN_MILLISECONDS;
         m_uiOverloadTimer = 0;
         m_bReapply = false;
+        m_bToFeugen = false;
         Reset();
     }
 

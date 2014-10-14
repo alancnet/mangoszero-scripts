@@ -216,6 +216,7 @@ struct mob_arugal_voidwalkerAI : public ScriptedAI
         m_bIsLeader = false;
         m_uiCurrentPoint = 0;
         m_bReverse = false;
+        m_bWPDone = false;
     }
 
     uint32 m_uiResetTimer, m_uiDarkOffering;
