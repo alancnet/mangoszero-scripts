@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -69,12 +79,24 @@ void instance_scholomance::OnObjectCreate(GameObject* pGo)
             m_mGoEntryGuidStore[pGo->GetEntry()] = pGo->GetObjectGuid();
             break;
 
-        case GO_GATE_MALICIA:  m_mGandlingData[EVENT_ID_MALICIA].m_doorGuid  = pGo->GetObjectGuid(); break;
-        case GO_GATE_THEOLEN:  m_mGandlingData[EVENT_ID_THEOLEN].m_doorGuid  = pGo->GetObjectGuid(); break;
-        case GO_GATE_POLKELT:  m_mGandlingData[EVENT_ID_POLKELT].m_doorGuid  = pGo->GetObjectGuid(); break;
-        case GO_GATE_RAVENIAN: m_mGandlingData[EVENT_ID_RAVENIAN].m_doorGuid = pGo->GetObjectGuid(); break;
-        case GO_GATE_BAROV:    m_mGandlingData[EVENT_ID_BAROV].m_doorGuid    = pGo->GetObjectGuid(); break;
-        case GO_GATE_ILLUCIA:  m_mGandlingData[EVENT_ID_ILLUCIA].m_doorGuid  = pGo->GetObjectGuid(); break;
+        case GO_GATE_MALICIA:
+            m_mGandlingData[EVENT_ID_MALICIA].m_doorGuid  = pGo->GetObjectGuid();
+            break;
+        case GO_GATE_THEOLEN:
+            m_mGandlingData[EVENT_ID_THEOLEN].m_doorGuid  = pGo->GetObjectGuid();
+            break;
+        case GO_GATE_POLKELT:
+            m_mGandlingData[EVENT_ID_POLKELT].m_doorGuid  = pGo->GetObjectGuid();
+            break;
+        case GO_GATE_RAVENIAN:
+            m_mGandlingData[EVENT_ID_RAVENIAN].m_doorGuid = pGo->GetObjectGuid();
+            break;
+        case GO_GATE_BAROV:
+            m_mGandlingData[EVENT_ID_BAROV].m_doorGuid    = pGo->GetObjectGuid();
+            break;
+        case GO_GATE_ILLUCIA:
+            m_mGandlingData[EVENT_ID_ILLUCIA].m_doorGuid  = pGo->GetObjectGuid();
+            break;
 
         case GO_VIEWING_ROOM_DOOR:
             // In normal flow of the instance, this door is opened by a dropped key
@@ -243,16 +265,36 @@ void instance_scholomance::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KIRTONOS:            SetData(TYPE_KIRTONOS, IN_PROGRESS);         break;
-        case NPC_RATTLEGORE:          SetData(TYPE_RATTLEGORE, IN_PROGRESS);       break;
-        case NPC_RAS_FROSTWHISPER:    SetData(TYPE_RAS_FROSTWHISPER, IN_PROGRESS); break;
-        case NPC_THEOLEN_KRASTINOV:   SetData(TYPE_THEOLEN, IN_PROGRESS);          break;
-        case NPC_LOREKEEPER_POLKELT:  SetData(TYPE_POLKELT, IN_PROGRESS);          break;
-        case NPC_RAVENIAN:            SetData(TYPE_RAVENIAN, IN_PROGRESS);         break;
-        case NPC_ILLUCIA_BAROV:       SetData(TYPE_ILLUCIA_BAROV, IN_PROGRESS);    break;
-        case NPC_ALEXEI_BAROV:        SetData(TYPE_ALEXEI_BAROV, IN_PROGRESS);     break;
-        case NPC_INSTRUCTOR_MALICIA:  SetData(TYPE_MALICIA, IN_PROGRESS);          break;
-        case NPC_DARKMASTER_GANDLING: SetData(TYPE_GANDLING, IN_PROGRESS);         break;
+        case NPC_KIRTONOS:
+            SetData(TYPE_KIRTONOS, IN_PROGRESS);
+            break;
+        case NPC_RATTLEGORE:
+            SetData(TYPE_RATTLEGORE, IN_PROGRESS);
+            break;
+        case NPC_RAS_FROSTWHISPER:
+            SetData(TYPE_RAS_FROSTWHISPER, IN_PROGRESS);
+            break;
+        case NPC_THEOLEN_KRASTINOV:
+            SetData(TYPE_THEOLEN, IN_PROGRESS);
+            break;
+        case NPC_LOREKEEPER_POLKELT:
+            SetData(TYPE_POLKELT, IN_PROGRESS);
+            break;
+        case NPC_RAVENIAN:
+            SetData(TYPE_RAVENIAN, IN_PROGRESS);
+            break;
+        case NPC_ILLUCIA_BAROV:
+            SetData(TYPE_ILLUCIA_BAROV, IN_PROGRESS);
+            break;
+        case NPC_ALEXEI_BAROV:
+            SetData(TYPE_ALEXEI_BAROV, IN_PROGRESS);
+            break;
+        case NPC_INSTRUCTOR_MALICIA:
+            SetData(TYPE_MALICIA, IN_PROGRESS);
+            break;
+        case NPC_DARKMASTER_GANDLING:
+            SetData(TYPE_GANDLING, IN_PROGRESS);
+            break;
 
         case NPC_BONE_MINION:
             for (GandlingEventMap::iterator itr = m_mGandlingData.begin(); itr != m_mGandlingData.end(); ++itr)
@@ -276,16 +318,36 @@ void instance_scholomance::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KIRTONOS:            SetData(TYPE_KIRTONOS, FAIL);         break;
-        case NPC_RATTLEGORE:          SetData(TYPE_RATTLEGORE, FAIL);       break;
-        case NPC_RAS_FROSTWHISPER:    SetData(TYPE_RAS_FROSTWHISPER, FAIL); break;
-        case NPC_THEOLEN_KRASTINOV:   SetData(TYPE_THEOLEN, FAIL);          break;
-        case NPC_LOREKEEPER_POLKELT:  SetData(TYPE_POLKELT, FAIL);          break;
-        case NPC_RAVENIAN:            SetData(TYPE_RAVENIAN, FAIL);         break;
-        case NPC_ILLUCIA_BAROV:       SetData(TYPE_ILLUCIA_BAROV, FAIL);    break;
-        case NPC_ALEXEI_BAROV:        SetData(TYPE_ALEXEI_BAROV, FAIL);     break;
-        case NPC_INSTRUCTOR_MALICIA:  SetData(TYPE_MALICIA, FAIL);          break;
-        case NPC_DARKMASTER_GANDLING: SetData(TYPE_GANDLING, FAIL);         break;
+        case NPC_KIRTONOS:
+            SetData(TYPE_KIRTONOS, FAIL);
+            break;
+        case NPC_RATTLEGORE:
+            SetData(TYPE_RATTLEGORE, FAIL);
+            break;
+        case NPC_RAS_FROSTWHISPER:
+            SetData(TYPE_RAS_FROSTWHISPER, FAIL);
+            break;
+        case NPC_THEOLEN_KRASTINOV:
+            SetData(TYPE_THEOLEN, FAIL);
+            break;
+        case NPC_LOREKEEPER_POLKELT:
+            SetData(TYPE_POLKELT, FAIL);
+            break;
+        case NPC_RAVENIAN:
+            SetData(TYPE_RAVENIAN, FAIL);
+            break;
+        case NPC_ILLUCIA_BAROV:
+            SetData(TYPE_ILLUCIA_BAROV, FAIL);
+            break;
+        case NPC_ALEXEI_BAROV:
+            SetData(TYPE_ALEXEI_BAROV, FAIL);
+            break;
+        case NPC_INSTRUCTOR_MALICIA:
+            SetData(TYPE_MALICIA, FAIL);
+            break;
+        case NPC_DARKMASTER_GANDLING:
+            SetData(TYPE_GANDLING, FAIL);
+            break;
 
         case NPC_BONE_MINION:
             for (GandlingEventMap::iterator itr = m_mGandlingData.begin(); itr != m_mGandlingData.end(); ++itr)
@@ -309,16 +371,36 @@ void instance_scholomance::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KIRTONOS:            SetData(TYPE_KIRTONOS, DONE);         break;
-        case NPC_RATTLEGORE:          SetData(TYPE_RATTLEGORE, DONE);       break;
-        case NPC_RAS_FROSTWHISPER:    SetData(TYPE_RAS_FROSTWHISPER, DONE); break;
-        case NPC_THEOLEN_KRASTINOV:   SetData(TYPE_THEOLEN, DONE);          break;
-        case NPC_LOREKEEPER_POLKELT:  SetData(TYPE_POLKELT, DONE);          break;
-        case NPC_RAVENIAN:            SetData(TYPE_RAVENIAN, DONE);         break;
-        case NPC_ILLUCIA_BAROV:       SetData(TYPE_ILLUCIA_BAROV, DONE);    break;
-        case NPC_ALEXEI_BAROV:        SetData(TYPE_ALEXEI_BAROV, DONE);     break;
-        case NPC_INSTRUCTOR_MALICIA:  SetData(TYPE_MALICIA, DONE);          break;
-        case NPC_DARKMASTER_GANDLING: SetData(TYPE_GANDLING, DONE);         break;
+        case NPC_KIRTONOS:
+            SetData(TYPE_KIRTONOS, DONE);
+            break;
+        case NPC_RATTLEGORE:
+            SetData(TYPE_RATTLEGORE, DONE);
+            break;
+        case NPC_RAS_FROSTWHISPER:
+            SetData(TYPE_RAS_FROSTWHISPER, DONE);
+            break;
+        case NPC_THEOLEN_KRASTINOV:
+            SetData(TYPE_THEOLEN, DONE);
+            break;
+        case NPC_LOREKEEPER_POLKELT:
+            SetData(TYPE_POLKELT, DONE);
+            break;
+        case NPC_RAVENIAN:
+            SetData(TYPE_RAVENIAN, DONE);
+            break;
+        case NPC_ILLUCIA_BAROV:
+            SetData(TYPE_ILLUCIA_BAROV, DONE);
+            break;
+        case NPC_ALEXEI_BAROV:
+            SetData(TYPE_ALEXEI_BAROV, DONE);
+            break;
+        case NPC_INSTRUCTOR_MALICIA:
+            SetData(TYPE_MALICIA, DONE);
+            break;
+        case NPC_DARKMASTER_GANDLING:
+            SetData(TYPE_GANDLING, DONE);
+            break;
 
         case NPC_BONE_MINION:
             for (GandlingEventMap::iterator itr = m_mGandlingData.begin(); itr != m_mGandlingData.end(); ++itr)

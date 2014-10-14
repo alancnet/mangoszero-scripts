@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -67,7 +77,10 @@ enum
 // TODO: make concept similar as "ringo" -escort. Find a way to run the scripted attacks, _if_ player are choosing road.
 struct MANGOS_DLL_DECL npc_kerlonianAI : public FollowerAI
 {
-    npc_kerlonianAI(Creature* pCreature) : FollowerAI(pCreature) { Reset(); }
+    npc_kerlonianAI(Creature* pCreature) : FollowerAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiFallAsleepTimer;
 
@@ -109,17 +122,31 @@ struct MANGOS_DLL_DECL npc_kerlonianAI : public FollowerAI
 
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(EMOTE_KER_SLEEP_1, m_creature); break;
-            case 1: DoScriptText(EMOTE_KER_SLEEP_2, m_creature); break;
-            case 2: DoScriptText(EMOTE_KER_SLEEP_3, m_creature); break;
+            case 0:
+                DoScriptText(EMOTE_KER_SLEEP_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(EMOTE_KER_SLEEP_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(EMOTE_KER_SLEEP_3, m_creature);
+                break;
         }
 
         switch (urand(0, 3))
         {
-            case 0: DoScriptText(SAY_KER_SLEEP_1, m_creature); break;
-            case 1: DoScriptText(SAY_KER_SLEEP_2, m_creature); break;
-            case 2: DoScriptText(SAY_KER_SLEEP_3, m_creature); break;
-            case 3: DoScriptText(SAY_KER_SLEEP_4, m_creature); break;
+            case 0:
+                DoScriptText(SAY_KER_SLEEP_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_KER_SLEEP_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_KER_SLEEP_3, m_creature);
+                break;
+            case 3:
+                DoScriptText(SAY_KER_SLEEP_4, m_creature);
+                break;
         }
 
         m_creature->SetStandState(UNIT_STAND_STATE_SLEEP);
@@ -209,7 +236,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_prospector_remtravelAI : public npc_escortAI
 {
-    npc_prospector_remtravelAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_prospector_remtravelAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void WaypointReached(uint32 uiPointId) override
     {
@@ -324,7 +354,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_threshwackonatorAI : public FollowerAI
 {
-    npc_threshwackonatorAI(Creature* pCreature) : FollowerAI(pCreature) { Reset(); }
+    npc_threshwackonatorAI(Creature* pCreature) : FollowerAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 
@@ -428,7 +461,10 @@ static const SummonLocation aVolcorSpawnLocs[] =
 
 struct MANGOS_DLL_DECL npc_volcorAI : public npc_escortAI
 {
-    npc_volcorAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_volcorAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiQuestId;
 
@@ -443,9 +479,15 @@ struct MANGOS_DLL_DECL npc_volcorAI : public npc_escortAI
         // shouldn't always use text on agro
         switch (urand(0, 4))
         {
-            case 0: DoScriptText(SAY_AGGRO_1, m_creature); break;
-            case 1: DoScriptText(SAY_AGGRO_2, m_creature); break;
-            case 2: DoScriptText(SAY_AGGRO_3, m_creature); break;
+            case 0:
+                DoScriptText(SAY_AGGRO_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_AGGRO_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_AGGRO_3, m_creature);
+                break;
         }
     }
 
@@ -563,7 +605,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_theryluneAI : public npc_escortAI
 {
-    npc_theryluneAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_theryluneAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
 
     void Reset() override {}

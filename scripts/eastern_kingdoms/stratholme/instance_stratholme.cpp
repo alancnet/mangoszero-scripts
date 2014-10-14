@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -542,10 +552,18 @@ void instance_stratholme::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_BARONESS_ANASTARI: SetData(TYPE_BARONESS, IN_PROGRESS); break;
-        case NPC_MALEKI_THE_PALLID: SetData(TYPE_PALLID, IN_PROGRESS);   break;
-        case NPC_NERUBENKAN:        SetData(TYPE_NERUB, IN_PROGRESS);    break;
-        case NPC_RAMSTEIN:          SetData(TYPE_RAMSTEIN, IN_PROGRESS); break;
+        case NPC_BARONESS_ANASTARI:
+            SetData(TYPE_BARONESS, IN_PROGRESS);
+            break;
+        case NPC_MALEKI_THE_PALLID:
+            SetData(TYPE_PALLID, IN_PROGRESS);
+            break;
+        case NPC_NERUBENKAN:
+            SetData(TYPE_NERUB, IN_PROGRESS);
+            break;
+        case NPC_RAMSTEIN:
+            SetData(TYPE_RAMSTEIN, IN_PROGRESS);
+            break;
             // TODO - uncomment when proper working within core! case NPC_BARON:             SetData(TYPE_BARON, IN_PROGRESS);    break;
 
         case NPC_ABOM_BILE:
@@ -566,10 +584,18 @@ void instance_stratholme::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_BARONESS_ANASTARI: SetData(TYPE_BARONESS, FAIL); break;
-        case NPC_MALEKI_THE_PALLID: SetData(TYPE_PALLID, FAIL);   break;
-        case NPC_NERUBENKAN:        SetData(TYPE_NERUB, FAIL);    break;
-        case NPC_RAMSTEIN:          SetData(TYPE_RAMSTEIN, FAIL); break;
+        case NPC_BARONESS_ANASTARI:
+            SetData(TYPE_BARONESS, FAIL);
+            break;
+        case NPC_MALEKI_THE_PALLID:
+            SetData(TYPE_PALLID, FAIL);
+            break;
+        case NPC_NERUBENKAN:
+            SetData(TYPE_NERUB, FAIL);
+            break;
+        case NPC_RAMSTEIN:
+            SetData(TYPE_RAMSTEIN, FAIL);
+            break;
             // TODO - uncomment when proper working within core! case NPC_BARON:             SetData(TYPE_BARON, FAIL);    break;
 
         case NPC_ABOM_BILE:
@@ -589,11 +615,21 @@ void instance_stratholme::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_BARONESS_ANASTARI: SetData(TYPE_BARONESS, DONE); break;
-        case NPC_MALEKI_THE_PALLID: SetData(TYPE_PALLID, DONE);   break;
-        case NPC_NERUBENKAN:        SetData(TYPE_NERUB, DONE);    break;
-        case NPC_RAMSTEIN:          SetData(TYPE_RAMSTEIN, DONE); break;
-        case NPC_BARON:             SetData(TYPE_BARON, DONE);    break;
+        case NPC_BARONESS_ANASTARI:
+            SetData(TYPE_BARONESS, DONE);
+            break;
+        case NPC_MALEKI_THE_PALLID:
+            SetData(TYPE_PALLID, DONE);
+            break;
+        case NPC_NERUBENKAN:
+            SetData(TYPE_NERUB, DONE);
+            break;
+        case NPC_RAMSTEIN:
+            SetData(TYPE_RAMSTEIN, DONE);
+            break;
+        case NPC_BARON:
+            SetData(TYPE_BARON, DONE);
+            break;
 
         case NPC_THUZADIN_ACOLYTE:
             ThazudinAcolyteJustDied(pCreature);
@@ -666,9 +702,15 @@ void instance_stratholme::ThazudinAcolyteJustDied(Creature* pCreature)
 
             switch (i)
             {
-                case 0: SetData(TYPE_BARONESS, SPECIAL); break;
-                case 1: SetData(TYPE_NERUB, SPECIAL);    break;
-                case 2: SetData(TYPE_PALLID, SPECIAL);   break;
+                case 0:
+                    SetData(TYPE_BARONESS, SPECIAL);
+                    break;
+                case 1:
+                    SetData(TYPE_NERUB, SPECIAL);
+                    break;
+                case 2:
+                    SetData(TYPE_PALLID, SPECIAL);
+                    break;
             }
         }
     }

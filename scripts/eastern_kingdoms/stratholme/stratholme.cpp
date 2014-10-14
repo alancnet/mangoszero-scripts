@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -145,7 +155,10 @@ enum
 // TODO - likely entirely not needed workaround
 struct MANGOS_DLL_DECL mob_restless_soulAI : public ScriptedAI
 {
-    mob_restless_soulAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    mob_restless_soulAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     ObjectGuid m_taggerGuid;
     uint32 m_uiDieTimer;
@@ -178,10 +191,18 @@ struct MANGOS_DLL_DECL mob_restless_soulAI : public ScriptedAI
 
             switch (urand(0, 3))
             {
-                case 0: DoScriptText(SAY_ZAPPED0, pSummoned); break;
-                case 1: DoScriptText(SAY_ZAPPED1, pSummoned); break;
-                case 2: DoScriptText(SAY_ZAPPED2, pSummoned); break;
-                case 3: DoScriptText(SAY_ZAPPED3, pSummoned); break;
+                case 0:
+                    DoScriptText(SAY_ZAPPED0, pSummoned);
+                    break;
+                case 1:
+                    DoScriptText(SAY_ZAPPED1, pSummoned);
+                    break;
+                case 2:
+                    DoScriptText(SAY_ZAPPED2, pSummoned);
+                    break;
+                case 3:
+                    DoScriptText(SAY_ZAPPED3, pSummoned);
+                    break;
             }
         }
     }
@@ -224,7 +245,10 @@ enum
 
 struct MANGOS_DLL_DECL mobs_spectral_ghostly_citizenAI : public ScriptedAI
 {
-    mobs_spectral_ghostly_citizenAI(Creature* pCreature) : ScriptedAI(pCreature) {Reset();}
+    mobs_spectral_ghostly_citizenAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiDieTimer;
     bool m_bIsTagged;

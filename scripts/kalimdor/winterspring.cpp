@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -173,8 +183,12 @@ struct MANGOS_DLL_DECL npc_ranshallaAI : public npc_escortAI, private DialogueHe
         {
             switch (urand(0, 1))
             {
-                case 0: DoScriptText(SAY_AFTER_TORCH_1, m_creature); break;
-                case 1: DoScriptText(SAY_AFTER_TORCH_2, m_creature); break;
+                case 0:
+                    DoScriptText(SAY_AFTER_TORCH_1, m_creature);
+                    break;
+                case 1:
+                    DoScriptText(SAY_AFTER_TORCH_2, m_creature);
+                    break;
             }
         }
 
@@ -203,9 +217,15 @@ struct MANGOS_DLL_DECL npc_ranshallaAI : public npc_escortAI, private DialogueHe
         // Yell and set escort to pause
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(SAY_REACH_TORCH_1, m_creature); break;
-            case 1: DoScriptText(SAY_REACH_TORCH_2, m_creature); break;
-            case 2: DoScriptText(SAY_REACH_TORCH_3, m_creature); break;
+            case 0:
+                DoScriptText(SAY_REACH_TORCH_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_REACH_TORCH_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_REACH_TORCH_3, m_creature);
+                break;
         }
 
         DoScriptText(EMOTE_CHANT_SPELL, m_creature);
@@ -385,10 +405,14 @@ struct MANGOS_DLL_DECL npc_ranshallaAI : public npc_escortAI, private DialogueHe
     {
         switch (uiEntry)
         {
-            case NPC_RANSHALLA:        return m_creature;
-            case NPC_VOICE_ELUNE:      return m_creature->GetMap()->GetCreature(m_voiceEluneGuid);
-            case NPC_PRIESTESS_DATA_1: return m_creature->GetMap()->GetCreature(m_firstPriestessGuid);
-            case NPC_PRIESTESS_DATA_2: return m_creature->GetMap()->GetCreature(m_secondPriestessGuid);
+            case NPC_RANSHALLA:
+                return m_creature;
+            case NPC_VOICE_ELUNE:
+                return m_creature->GetMap()->GetCreature(m_voiceEluneGuid);
+            case NPC_PRIESTESS_DATA_1:
+                return m_creature->GetMap()->GetCreature(m_firstPriestessGuid);
+            case NPC_PRIESTESS_DATA_2:
+                return m_creature->GetMap()->GetCreature(m_secondPriestessGuid);
 
             default:
                 return NULL;

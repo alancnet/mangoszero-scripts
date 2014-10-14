@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -48,7 +58,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_ame01AI : public npc_escortAI
 {
-    npc_ame01AI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_ame01AI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override {}
 
@@ -82,9 +95,15 @@ struct MANGOS_DLL_DECL npc_ame01AI : public npc_escortAI
 
             switch (urand(0, 2))
             {
-                case 0: DoScriptText(SAY_AME_AGGRO1, m_creature, pWho); break;
-                case 1: DoScriptText(SAY_AME_AGGRO2, m_creature, pWho); break;
-                case 2: DoScriptText(SAY_AME_AGGRO3, m_creature, pWho); break;
+                case 0:
+                    DoScriptText(SAY_AME_AGGRO1, m_creature, pWho);
+                    break;
+                case 1:
+                    DoScriptText(SAY_AME_AGGRO2, m_creature, pWho);
+                    break;
+                case 2:
+                    DoScriptText(SAY_AME_AGGRO3, m_creature, pWho);
+                    break;
             }
         }
     }
@@ -149,7 +168,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_ringoAI : public FollowerAI
 {
-    npc_ringoAI(Creature* pCreature) : FollowerAI(pCreature) { Reset(); }
+    npc_ringoAI(Creature* pCreature) : FollowerAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiFaintTimer;
     uint32 m_uiEndEventProgress;
@@ -199,10 +221,18 @@ struct MANGOS_DLL_DECL npc_ringoAI : public FollowerAI
 
             switch (urand(0, 3))
             {
-                case 0: DoScriptText(SAY_FAINT_1, m_creature); break;
-                case 1: DoScriptText(SAY_FAINT_2, m_creature); break;
-                case 2: DoScriptText(SAY_FAINT_3, m_creature); break;
-                case 3: DoScriptText(SAY_FAINT_4, m_creature); break;
+                case 0:
+                    DoScriptText(SAY_FAINT_1, m_creature);
+                    break;
+                case 1:
+                    DoScriptText(SAY_FAINT_2, m_creature);
+                    break;
+                case 2:
+                    DoScriptText(SAY_FAINT_3, m_creature);
+                    break;
+                case 3:
+                    DoScriptText(SAY_FAINT_4, m_creature);
+                    break;
             }
         }
 
@@ -219,10 +249,18 @@ struct MANGOS_DLL_DECL npc_ringoAI : public FollowerAI
 
         switch (urand(0, 3))
         {
-            case 0: DoScriptText(SAY_WAKE_1, m_creature); break;
-            case 1: DoScriptText(SAY_WAKE_2, m_creature); break;
-            case 2: DoScriptText(SAY_WAKE_3, m_creature); break;
-            case 3: DoScriptText(SAY_WAKE_4, m_creature); break;
+            case 0:
+                DoScriptText(SAY_WAKE_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_WAKE_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_WAKE_3, m_creature);
+                break;
+            case 3:
+                DoScriptText(SAY_WAKE_4, m_creature);
+                break;
         }
 
         SetFollowPaused(false);

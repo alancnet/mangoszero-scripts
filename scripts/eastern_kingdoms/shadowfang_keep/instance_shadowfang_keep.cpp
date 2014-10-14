@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -152,11 +162,16 @@ uint32 instance_shadowfang_keep::GetData(uint32 uiType) const
 {
     switch (uiType)
     {
-        case TYPE_FREE_NPC:   return m_auiEncounter[0];
-        case TYPE_RETHILGORE: return m_auiEncounter[1];
-        case TYPE_FENRUS:     return m_auiEncounter[2];
-        case TYPE_NANDOS:     return m_auiEncounter[3];
-        case TYPE_INTRO:      return m_auiEncounter[4];
+        case TYPE_FREE_NPC:
+            return m_auiEncounter[0];
+        case TYPE_RETHILGORE:
+            return m_auiEncounter[1];
+        case TYPE_FENRUS:
+            return m_auiEncounter[2];
+        case TYPE_NANDOS:
+            return m_auiEncounter[3];
+        case TYPE_INTRO:
+            return m_auiEncounter[4];
 
         default:
             return 0;

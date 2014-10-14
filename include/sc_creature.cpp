@@ -1,11 +1,33 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
- * This program is free software licensed under GPL version 2
- * Please see the included DOCS/LICENSE.TXT for more information */
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
+ */
 
 #include "precompiled.h"
 #include "Item.h"
 #include "Spell.h"
-#include "WorldPacket.h"
+#include "network/WorldPacket.h"
 #include "ObjectMgr.h"
 #include "Cell.h"
 #include "CellImpl.h"
@@ -201,11 +223,11 @@ SpellEntry const* ScriptedAI::SelectSpell(Unit* pTarget, int32 uiSchool, int32 i
 {
     // No target so we can't cast
     if (!pTarget)
-        return false;
+        return NULL;
 
     // Silenced so we can't cast
     if (m_creature->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_SILENCED))
-        return false;
+        return NULL;
 
     // Using the extended script system we first create a list of viable spells
     SpellEntry const* apSpell[4];
@@ -329,49 +351,49 @@ void FillSpellSummary()
         for (uint8 j = 0; j < 3; ++j)
         {
             // Spell targets self
-            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_SELF)
+            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_CASTER)
                 SpellSummary[i].Targets |= 1 << (SELECT_TARGET_SELF - 1);
 
             // Spell targets a single enemy
-            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_CHAIN_DAMAGE ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_CURRENT_ENEMY_COORDINATES)
+            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_TARGET_ENEMY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_DEST_TARGET_ENEMY)
                 SpellSummary[i].Targets |= 1 << (SELECT_TARGET_SINGLE_ENEMY - 1);
 
             // Spell targets AoE at enemy
-            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_ENEMY_IN_AREA ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_ENEMY_IN_AREA_INSTANT ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_CASTER_COORDINATES ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_ENEMY_IN_AREA_CHANNELED)
+            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_SRC_AREA_ENEMY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_DEST_AREA_ENEMY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SRC_CASTER ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_DEST_DYNOBJ_ENEMY)
                 SpellSummary[i].Targets |= 1 << (SELECT_TARGET_AOE_ENEMY - 1);
 
             // Spell targets an enemy
-            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_CHAIN_DAMAGE ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_CURRENT_ENEMY_COORDINATES ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_ENEMY_IN_AREA ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_ENEMY_IN_AREA_INSTANT ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_CASTER_COORDINATES ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_ENEMY_IN_AREA_CHANNELED)
+            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_TARGET_ENEMY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_DEST_TARGET_ENEMY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_SRC_AREA_ENEMY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_DEST_AREA_ENEMY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SRC_CASTER ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_DEST_DYNOBJ_ENEMY)
                 SpellSummary[i].Targets |= 1 << (SELECT_TARGET_ANY_ENEMY - 1);
 
             // Spell targets a single friend(or self)
-            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_SELF ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SINGLE_FRIEND ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SINGLE_PARTY)
+            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_CASTER ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_TARGET_ALLY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_TARGET_PARTY)
                 SpellSummary[i].Targets |= 1 << (SELECT_TARGET_SINGLE_FRIEND - 1);
 
             // Spell targets aoe friends
-            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_PARTY_AROUND_CASTER ||
+            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_CASTER_AREA_PARTY ||
                     pTempSpell->EffectImplicitTargetA[j] == TARGET_AREAEFFECT_PARTY ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_CASTER_COORDINATES)
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SRC_CASTER)
                 SpellSummary[i].Targets |= 1 << (SELECT_TARGET_AOE_FRIEND - 1);
 
             // Spell targets any friend(or self)
-            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_SELF ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SINGLE_FRIEND ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SINGLE_PARTY ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_ALL_PARTY_AROUND_CASTER ||
+            if (pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_CASTER ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_TARGET_ALLY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_TARGET_PARTY ||
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_UNIT_CASTER_AREA_PARTY ||
                     pTempSpell->EffectImplicitTargetA[j] == TARGET_AREAEFFECT_PARTY ||
-                    pTempSpell->EffectImplicitTargetA[j] == TARGET_CASTER_COORDINATES)
+                    pTempSpell->EffectImplicitTargetA[j] == TARGET_SRC_CASTER)
                 SpellSummary[i].Targets |= 1 << (SELECT_TARGET_ANY_FRIEND - 1);
 
             // Make sure that this spell includes a damage effect

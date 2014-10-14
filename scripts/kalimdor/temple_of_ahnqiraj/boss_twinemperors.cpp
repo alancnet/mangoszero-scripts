@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -155,7 +165,10 @@ struct MANGOS_DLL_DECL boss_twin_emperorsAI : public ScriptedAI
     virtual bool DoHandleBerserk() = 0;
 
     // Return true to handle shared timers and MeleeAttack
-    virtual bool UpdateEmperorAI(const uint32 /*uiDiff*/) { return true; }
+    virtual bool UpdateEmperorAI(const uint32 /*uiDiff*/)
+    {
+        return true;
+    }
 
     void UpdateAI(const uint32 uiDiff) override
     {
@@ -198,7 +211,10 @@ struct MANGOS_DLL_DECL boss_twin_emperorsAI : public ScriptedAI
 
 struct MANGOS_DLL_DECL boss_veknilashAI : public boss_twin_emperorsAI
 {
-    boss_veknilashAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature) { Reset(); }
+    boss_veknilashAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiUppercutTimer;
     uint32 m_uiUnbalancingStrikeTimer;
@@ -225,10 +241,18 @@ struct MANGOS_DLL_DECL boss_veknilashAI : public boss_twin_emperorsAI
 
         switch (urand(0, 3))
         {
-            case 0: DoScriptText(SAY_VEKNILASH_AGGRO_1, m_creature); break;
-            case 1: DoScriptText(SAY_VEKNILASH_AGGRO_2, m_creature); break;
-            case 2: DoScriptText(SAY_VEKNILASH_AGGRO_3, m_creature); break;
-            case 3: DoScriptText(SAY_VEKNILASH_AGGRO_4, m_creature); break;
+            case 0:
+                DoScriptText(SAY_VEKNILASH_AGGRO_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_VEKNILASH_AGGRO_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_VEKNILASH_AGGRO_3, m_creature);
+                break;
+            case 3:
+                DoScriptText(SAY_VEKNILASH_AGGRO_4, m_creature);
+                break;
         }
     }
 
@@ -306,7 +330,10 @@ struct MANGOS_DLL_DECL boss_veknilashAI : public boss_twin_emperorsAI
 
 struct MANGOS_DLL_DECL boss_veklorAI : public boss_twin_emperorsAI
 {
-    boss_veklorAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature) { Reset(); }
+    boss_veklorAI(Creature* pCreature) : boss_twin_emperorsAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiShadowBoltTimer;
     uint32 m_uiBlizzardTimer;
@@ -335,10 +362,18 @@ struct MANGOS_DLL_DECL boss_veklorAI : public boss_twin_emperorsAI
 
         switch (urand(0, 3))
         {
-            case 0: DoScriptText(SAY_VEKLOR_AGGRO_1, m_creature); break;
-            case 1: DoScriptText(SAY_VEKLOR_AGGRO_2, m_creature); break;
-            case 2: DoScriptText(SAY_VEKLOR_AGGRO_3, m_creature); break;
-            case 3: DoScriptText(SAY_VEKLOR_AGGRO_4, m_creature); break;
+            case 0:
+                DoScriptText(SAY_VEKLOR_AGGRO_1, m_creature);
+                break;
+            case 1:
+                DoScriptText(SAY_VEKLOR_AGGRO_2, m_creature);
+                break;
+            case 2:
+                DoScriptText(SAY_VEKLOR_AGGRO_3, m_creature);
+                break;
+            case 3:
+                DoScriptText(SAY_VEKLOR_AGGRO_4, m_creature);
+                break;
         }
     }
 

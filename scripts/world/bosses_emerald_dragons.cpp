@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -52,7 +62,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_emerald_dragonAI : public ScriptedAI
 {
-    boss_emerald_dragonAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_emerald_dragonAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiEventCounter;
 
@@ -96,7 +109,10 @@ struct MANGOS_DLL_DECL boss_emerald_dragonAI : public ScriptedAI
     virtual bool DoSpecialDragonAbility() = 0;
 
     // Return true to handle shared timers and MeleeAttack
-    virtual bool UpdateDragonAI(const uint32 /*uiDiff*/) { return true; }
+    virtual bool UpdateDragonAI(const uint32 /*uiDiff*/)
+    {
+        return true;
+    }
 
     void UpdateAI(const uint32 uiDiff) override
     {
@@ -157,7 +173,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_emerissAI : public boss_emerald_dragonAI
 {
-    boss_emerissAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature) { Reset(); }
+    boss_emerissAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiVolatileInfectionTimer;
 
@@ -285,7 +304,10 @@ struct MANGOS_DLL_DECL boss_lethonAI : public boss_emerald_dragonAI
 
 struct MANGOS_DLL_DECL npc_spirit_shadeAI : public ScriptedAI
 {
-    npc_spirit_shadeAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    npc_spirit_shadeAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     bool m_bHasHealed;
 
@@ -345,7 +367,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_taerarAI : public boss_emerald_dragonAI
 {
-    boss_taerarAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature) { Reset(); }
+    boss_taerarAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiArcaneBlastTimer;
     uint32 m_uiBellowingRoarTimer;
@@ -475,7 +500,10 @@ enum
 // Ysondre script
 struct MANGOS_DLL_DECL boss_ysondreAI : public boss_emerald_dragonAI
 {
-    boss_ysondreAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature) { Reset(); }
+    boss_ysondreAI(Creature* pCreature) : boss_emerald_dragonAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiLightningWaveTimer;
 

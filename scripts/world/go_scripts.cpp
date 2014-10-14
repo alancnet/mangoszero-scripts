@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -72,10 +82,18 @@ bool GOUse_go_andorhal_tower(Player* pPlayer, GameObject* pGo)
         uint32 uiKillCredit = 0;
         switch (pGo->GetEntry())
         {
-            case GO_ANDORHAL_TOWER_1:   uiKillCredit = NPC_ANDORHAL_TOWER_1;   break;
-            case GO_ANDORHAL_TOWER_2:   uiKillCredit = NPC_ANDORHAL_TOWER_2;   break;
-            case GO_ANDORHAL_TOWER_3:   uiKillCredit = NPC_ANDORHAL_TOWER_3;   break;
-            case GO_ANDORHAL_TOWER_4:   uiKillCredit = NPC_ANDORHAL_TOWER_4;   break;
+            case GO_ANDORHAL_TOWER_1:
+                uiKillCredit = NPC_ANDORHAL_TOWER_1;
+                break;
+            case GO_ANDORHAL_TOWER_2:
+                uiKillCredit = NPC_ANDORHAL_TOWER_2;
+                break;
+            case GO_ANDORHAL_TOWER_3:
+                uiKillCredit = NPC_ANDORHAL_TOWER_3;
+                break;
+            case GO_ANDORHAL_TOWER_4:
+                uiKillCredit = NPC_ANDORHAL_TOWER_4;
+                break;
         }
         if (uiKillCredit)
             pPlayer->KilledMonsterCredit(uiKillCredit);

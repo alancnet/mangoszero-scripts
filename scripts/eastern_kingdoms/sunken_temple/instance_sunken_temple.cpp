@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -110,9 +120,15 @@ void instance_sunken_temple::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_ATALARION:         SetData(TYPE_ATALARION, DONE); break;
-        case NPC_JAMMALAN:          SetData(TYPE_JAMMALAN, DONE);  break;
-        case NPC_AVATAR_OF_HAKKAR:  SetData(TYPE_AVATAR, DONE);    break;
+        case NPC_ATALARION:
+            SetData(TYPE_ATALARION, DONE);
+            break;
+        case NPC_JAMMALAN:
+            SetData(TYPE_JAMMALAN, DONE);
+            break;
+        case NPC_AVATAR_OF_HAKKAR:
+            SetData(TYPE_AVATAR, DONE);
+            break;
 
         case NPC_SUPPRESSOR:
             m_bCanSummonBloodkeeper = true;
@@ -168,9 +184,15 @@ void instance_sunken_temple::SetData(uint32 uiType, uint32 uiData)
                 {
                         // Yells on each flame
                         // TODO It might be possible that these yells should be ordered randomly, however this is the seen state
-                    case 1: DoScriptText(SAY_AVATAR_BRAZIER_1, pShade); break;
-                    case 2: DoScriptText(SAY_AVATAR_BRAZIER_2, pShade); break;
-                    case 3: DoScriptText(SAY_AVATAR_BRAZIER_3, pShade); break;
+                    case 1:
+                        DoScriptText(SAY_AVATAR_BRAZIER_1, pShade);
+                        break;
+                    case 2:
+                        DoScriptText(SAY_AVATAR_BRAZIER_2, pShade);
+                        break;
+                    case 3:
+                        DoScriptText(SAY_AVATAR_BRAZIER_3, pShade);
+                        break;
                         // Summon the avatar of all flames are used
                     case MAX_FLAMES:
                         DoScriptText(SAY_AVATAR_BRAZIER_4, pShade);

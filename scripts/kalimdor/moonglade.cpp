@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -276,8 +286,10 @@ struct MANGOS_DLL_DECL npc_keeper_remulosAI : public npc_escortAI, private Dialo
     {
         switch (uiEntry)
         {
-            case NPC_REMULOS:         return m_creature;
-            case NPC_ERANIKUS_TYRANT: return m_creature->GetMap()->GetCreature(m_eranikusGuid);
+            case NPC_REMULOS:
+                return m_creature;
+            case NPC_ERANIKUS_TYRANT:
+                return m_creature->GetMap()->GetCreature(m_eranikusGuid);
 
             default:
                 return NULL;
@@ -419,9 +431,15 @@ struct MANGOS_DLL_DECL npc_keeper_remulosAI : public npc_escortAI, private Dialo
             {
                 switch (urand(0, 2))
                 {
-                    case 0: DoCastSpellIfCan(pTarget, SPELL_HEALING_TOUCH); break;
-                    case 1: DoCastSpellIfCan(pTarget, SPELL_REJUVENATION);  break;
-                    case 2: DoCastSpellIfCan(pTarget, SPELL_REGROWTH);      break;
+                    case 0:
+                        DoCastSpellIfCan(pTarget, SPELL_HEALING_TOUCH);
+                        break;
+                    case 1:
+                        DoCastSpellIfCan(pTarget, SPELL_REJUVENATION);
+                        break;
+                    case 2:
+                        DoCastSpellIfCan(pTarget, SPELL_REGROWTH);
+                        break;
                 }
             }
             m_uiHealTimer = 10000;
@@ -499,7 +517,10 @@ enum
 
 struct MANGOS_DLL_DECL boss_eranikusAI : public ScriptedAI
 {
-    boss_eranikusAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
+    boss_eranikusAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiAcidBreathTimer;
     uint32 m_uiNoxiousBreathTimer;

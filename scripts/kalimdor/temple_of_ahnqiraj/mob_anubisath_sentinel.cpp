@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -68,7 +78,7 @@ struct MANGOS_DLL_DECL npc_anubisath_sentinelAI : public ScriptedAI
         if (m_lAssistList.size() == MAX_BUDDY)
             reader.PSendSysMessage("Anubisath Sentinel - proper group found");
         else
-            reader.PSendSysMessage("Anubisath Sentinel - not correct number of mobs for group found. Number found %u, should be %u", m_lAssistList.size(), MAX_BUDDY);
+            reader.PSendSysMessage("Anubisath Sentinel - not correct number of mobs for group found. Number found %lu, should be %u", m_lAssistList.size(), MAX_BUDDY);
     }
 
     void JustReachedHome() override
@@ -102,15 +112,33 @@ struct MANGOS_DLL_DECL npc_anubisath_sentinelAI : public ScriptedAI
     {
         switch (urand(0, 8))
         {
-            case 0: m_uiMyAbility = SPELL_MENDING; break;
-            case 1: m_uiMyAbility = SPELL_PERIODIC_KNOCK_AWAY; break;
-            case 2: m_uiMyAbility = SPELL_PERIODIC_MANA_BURN; break;
-            case 3: m_uiMyAbility = SPELL_FIRE_ARCANE_REFLECT; break;
-            case 4: m_uiMyAbility = SPELL_SHADOW_FROST_REFLECT; break;
-            case 5: m_uiMyAbility = SPELL_THORNS; break;
-            case 6: m_uiMyAbility = SPELL_PERIODIC_THUNDERCLAP; break;
-            case 7: m_uiMyAbility = SPELL_MORTAL_STRIKE; break;
-            case 8: m_uiMyAbility = SPELL_PERIODIC_SHADOW_STORM; break;
+            case 0:
+                m_uiMyAbility = SPELL_MENDING;
+                break;
+            case 1:
+                m_uiMyAbility = SPELL_PERIODIC_KNOCK_AWAY;
+                break;
+            case 2:
+                m_uiMyAbility = SPELL_PERIODIC_MANA_BURN;
+                break;
+            case 3:
+                m_uiMyAbility = SPELL_FIRE_ARCANE_REFLECT;
+                break;
+            case 4:
+                m_uiMyAbility = SPELL_SHADOW_FROST_REFLECT;
+                break;
+            case 5:
+                m_uiMyAbility = SPELL_THORNS;
+                break;
+            case 6:
+                m_uiMyAbility = SPELL_PERIODIC_THUNDERCLAP;
+                break;
+            case 7:
+                m_uiMyAbility = SPELL_MORTAL_STRIKE;
+                break;
+            case 8:
+                m_uiMyAbility = SPELL_PERIODIC_SHADOW_STORM;
+                break;
         }
 
         DoCastSpellIfCan(m_creature, m_uiMyAbility, CAST_TRIGGERED);

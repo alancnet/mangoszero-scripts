@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -56,15 +66,31 @@ void instance_gnomeregan::OnObjectCreate(GameObject* pGo)
             m_mGoEntryGuidStore[pGo->GetEntry()] = pGo->GetObjectGuid();
             break;
 
-        case GO_RED_ROCKET:         m_lRedRocketGUIDs.push_back(pGo->GetObjectGuid());         return;
-        case GO_EXPLOSIVE_CHARGE:   m_luiExplosiveChargeGUIDs.push_back(pGo->GetObjectGuid()); return;
+        case GO_RED_ROCKET:
+            m_lRedRocketGUIDs.push_back(pGo->GetObjectGuid());
+            return;
+        case GO_EXPLOSIVE_CHARGE:
+            m_luiExplosiveChargeGUIDs.push_back(pGo->GetObjectGuid());
+            return;
 
-        case GO_GNOME_FACE_1: m_asBombFaces[0].m_gnomeFaceGuid = pGo->GetObjectGuid(); return;
-        case GO_GNOME_FACE_2: m_asBombFaces[1].m_gnomeFaceGuid = pGo->GetObjectGuid(); return;
-        case GO_GNOME_FACE_3: m_asBombFaces[2].m_gnomeFaceGuid = pGo->GetObjectGuid(); return;
-        case GO_GNOME_FACE_4: m_asBombFaces[3].m_gnomeFaceGuid = pGo->GetObjectGuid(); return;
-        case GO_GNOME_FACE_5: m_asBombFaces[4].m_gnomeFaceGuid = pGo->GetObjectGuid(); return;
-        case GO_GNOME_FACE_6: m_asBombFaces[5].m_gnomeFaceGuid = pGo->GetObjectGuid(); return;
+        case GO_GNOME_FACE_1:
+            m_asBombFaces[0].m_gnomeFaceGuid = pGo->GetObjectGuid();
+            return;
+        case GO_GNOME_FACE_2:
+            m_asBombFaces[1].m_gnomeFaceGuid = pGo->GetObjectGuid();
+            return;
+        case GO_GNOME_FACE_3:
+            m_asBombFaces[2].m_gnomeFaceGuid = pGo->GetObjectGuid();
+            return;
+        case GO_GNOME_FACE_4:
+            m_asBombFaces[3].m_gnomeFaceGuid = pGo->GetObjectGuid();
+            return;
+        case GO_GNOME_FACE_5:
+            m_asBombFaces[4].m_gnomeFaceGuid = pGo->GetObjectGuid();
+            return;
+        case GO_GNOME_FACE_6:
+            m_asBombFaces[5].m_gnomeFaceGuid = pGo->GetObjectGuid();
+            return;
     }
 }
 
@@ -233,8 +259,10 @@ uint32 instance_gnomeregan::GetData(uint32 uiType) const
 {
     switch (uiType)
     {
-        case TYPE_GRUBBIS:      return m_auiEncounter[0];
-        case TYPE_THERMAPLUGG:  return m_auiEncounter[1];
+        case TYPE_GRUBBIS:
+            return m_auiEncounter[0];
+        case TYPE_THERMAPLUGG:
+            return m_auiEncounter[1];
         default:
             return 0;
     }

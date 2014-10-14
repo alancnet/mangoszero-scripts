@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -73,6 +83,14 @@ void instance_temple_of_ahnqiraj::DoHandleTempleAreaTrigger(uint32 uiTriggerId)
             pEye->ForcedDespawn(1000);
         m_bIsEmperorsIntroDone = true;
     }
+    else if (uiTriggerId == AREATRIGGER_SARTURA)
+    {
+        if (GetData(TYPE_SARTURA) == NOT_STARTED || GetData(TYPE_SARTURA) == FAIL)
+        {
+            if (Creature* pSartura = GetSingleCreatureFromStorage(NPC_SARTURA))
+                pSartura->SetInCombatWithZone();
+        }
+    }
 }
 
 void instance_temple_of_ahnqiraj::OnCreatureCreate(Creature* pCreature)
@@ -83,6 +101,7 @@ void instance_temple_of_ahnqiraj::OnCreatureCreate(Creature* pCreature)
             // Don't store the summoned images guid
             if (GetData(TYPE_SKERAM) == IN_PROGRESS)
                 break;
+        case NPC_SARTURA:
         case NPC_VEKLOR:
         case NPC_VEKNILASH:
         case NPC_MASTERS_EYE:
@@ -241,14 +260,30 @@ void instance_temple_of_ahnqiraj::Update(uint32 uiDiff)
                 // ToDo: also cast the C'thun Whispering charm spell - requires additional research
                 switch (urand(0, 7))
                 {
-                    case 0: DoScriptText(SAY_CTHUN_WHISPER_1, pCthun, pPlayer); break;
-                    case 1: DoScriptText(SAY_CTHUN_WHISPER_2, pCthun, pPlayer); break;
-                    case 2: DoScriptText(SAY_CTHUN_WHISPER_3, pCthun, pPlayer); break;
-                    case 3: DoScriptText(SAY_CTHUN_WHISPER_4, pCthun, pPlayer); break;
-                    case 4: DoScriptText(SAY_CTHUN_WHISPER_5, pCthun, pPlayer); break;
-                    case 5: DoScriptText(SAY_CTHUN_WHISPER_6, pCthun, pPlayer); break;
-                    case 6: DoScriptText(SAY_CTHUN_WHISPER_7, pCthun, pPlayer); break;
-                    case 7: DoScriptText(SAY_CTHUN_WHISPER_8, pCthun, pPlayer); break;
+                    case 0:
+                        DoScriptText(SAY_CTHUN_WHISPER_1, pCthun, pPlayer);
+                        break;
+                    case 1:
+                        DoScriptText(SAY_CTHUN_WHISPER_2, pCthun, pPlayer);
+                        break;
+                    case 2:
+                        DoScriptText(SAY_CTHUN_WHISPER_3, pCthun, pPlayer);
+                        break;
+                    case 3:
+                        DoScriptText(SAY_CTHUN_WHISPER_4, pCthun, pPlayer);
+                        break;
+                    case 4:
+                        DoScriptText(SAY_CTHUN_WHISPER_5, pCthun, pPlayer);
+                        break;
+                    case 5:
+                        DoScriptText(SAY_CTHUN_WHISPER_6, pCthun, pPlayer);
+                        break;
+                    case 6:
+                        DoScriptText(SAY_CTHUN_WHISPER_7, pCthun, pPlayer);
+                        break;
+                    case 7:
+                        DoScriptText(SAY_CTHUN_WHISPER_8, pCthun, pPlayer);
+                        break;
                 }
             }
         }
@@ -265,7 +300,7 @@ InstanceData* GetInstanceData_instance_temple_of_ahnqiraj(Map* pMap)
 
 bool AreaTrigger_at_temple_ahnqiraj(Player* pPlayer, AreaTriggerEntry const* pAt)
 {
-    if (pAt->id == AREATRIGGER_TWIN_EMPERORS)
+    if (pAt->id == AREATRIGGER_TWIN_EMPERORS || pAt->id == AREATRIGGER_SARTURA)
     {
         if (pPlayer->isGameMaster() || !pPlayer->isAlive())
             return false;

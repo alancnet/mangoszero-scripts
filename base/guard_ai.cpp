@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -43,9 +53,15 @@ void guardAI::Aggro(Unit* pWho)
     {
         switch (urand(0, 2))
         {
-            case 0: DoScriptText(SAY_GUARD_SIL_AGGRO1, m_creature, pWho); break;
-            case 1: DoScriptText(SAY_GUARD_SIL_AGGRO2, m_creature, pWho); break;
-            case 2: DoScriptText(SAY_GUARD_SIL_AGGRO3, m_creature, pWho); break;
+            case 0:
+                DoScriptText(SAY_GUARD_SIL_AGGRO1, m_creature, pWho);
+                break;
+            case 1:
+                DoScriptText(SAY_GUARD_SIL_AGGRO2, m_creature, pWho);
+                break;
+            case 2:
+                DoScriptText(SAY_GUARD_SIL_AGGRO3, m_creature, pWho);
+                break;
         }
     }
 
@@ -187,12 +203,22 @@ void guardAI::DoReplyToTextEmote(uint32 uiTextEmote)
 {
     switch (uiTextEmote)
     {
-        case TEXTEMOTE_KISS:    m_creature->HandleEmote(EMOTE_ONESHOT_BOW);    break;
-        case TEXTEMOTE_WAVE:    m_creature->HandleEmote(EMOTE_ONESHOT_WAVE);   break;
-        case TEXTEMOTE_SALUTE:  m_creature->HandleEmote(EMOTE_ONESHOT_SALUTE); break;
-        case TEXTEMOTE_SHY:     m_creature->HandleEmote(EMOTE_ONESHOT_FLEX);   break;
+        case TEXTEMOTE_KISS:
+            m_creature->HandleEmote(EMOTE_ONESHOT_BOW);
+            break;
+        case TEXTEMOTE_WAVE:
+            m_creature->HandleEmote(EMOTE_ONESHOT_WAVE);
+            break;
+        case TEXTEMOTE_SALUTE:
+            m_creature->HandleEmote(EMOTE_ONESHOT_SALUTE);
+            break;
+        case TEXTEMOTE_SHY:
+            m_creature->HandleEmote(EMOTE_ONESHOT_FLEX);
+            break;
         case TEXTEMOTE_RUDE:
-        case TEXTEMOTE_CHICKEN: m_creature->HandleEmote(EMOTE_ONESHOT_POINT);  break;
+        case TEXTEMOTE_CHICKEN:
+            m_creature->HandleEmote(EMOTE_ONESHOT_POINT);
+            break;
     }
 }
 

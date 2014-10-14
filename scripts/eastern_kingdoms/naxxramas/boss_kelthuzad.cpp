@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -222,13 +232,20 @@ struct MANGOS_DLL_DECL boss_kelthuzadAI : public ScriptedAI
     {
         switch (uiId)
         {
-            case 1: return M_PI_F - M_F_ANGLE;              // south
-            case 2: return M_PI_F / 2 * 3 - M_F_ANGLE;      // east
-            case 3: return M_PI_F / 2 - M_F_ANGLE;          // west
-            case 4: return M_PI_F / 4 - M_F_ANGLE;          // north-west
-            case 5: return M_PI_F / 4 * 7 - M_F_ANGLE;      // north-east
-            case 6: return M_PI_F / 4 * 5 - M_F_ANGLE;      // south-east
-            case 7: return M_PI_F / 4 * 3 - M_F_ANGLE;      // south-west
+            case 1:
+                return M_PI_F - M_F_ANGLE;              // south
+            case 2:
+                return M_PI_F / 2 * 3 - M_F_ANGLE;      // east
+            case 3:
+                return M_PI_F / 2 - M_F_ANGLE;          // west
+            case 4:
+                return M_PI_F / 4 - M_F_ANGLE;          // north-west
+            case 5:
+                return M_PI_F / 4 * 7 - M_F_ANGLE;      // north-east
+            case 6:
+                return M_PI_F / 4 * 5 - M_F_ANGLE;      // south-east
+            case 7:
+                return M_PI_F / 4 * 3 - M_F_ANGLE;      // south-west
         }
 
         return M_F_ANGLE;
@@ -387,9 +404,15 @@ struct MANGOS_DLL_DECL boss_kelthuzadAI : public ScriptedAI
 
                     switch (urand(0, 2))
                     {
-                        case 0: DoScriptText(SAY_AGGRO1, m_creature); break;
-                        case 1: DoScriptText(SAY_AGGRO2, m_creature); break;
-                        case 2: DoScriptText(SAY_AGGRO3, m_creature); break;
+                        case 0:
+                            DoScriptText(SAY_AGGRO1, m_creature);
+                            break;
+                        case 1:
+                            DoScriptText(SAY_AGGRO2, m_creature);
+                            break;
+                        case 2:
+                            DoScriptText(SAY_AGGRO3, m_creature);
+                            break;
                     };
                 }
                 else

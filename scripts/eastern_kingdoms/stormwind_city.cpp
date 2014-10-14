@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -357,9 +367,15 @@ struct MANGOS_DLL_DECL npc_squire_roweAI : public npc_escortAI, private Dialogue
     }
 
     // Check if the event is already running
-    bool IsStormwindQuestActive() { return m_bIsEventInProgress; }
+    bool IsStormwindQuestActive()
+    {
+        return m_bIsEventInProgress;
+    }
 
-    void UpdateEscortAI(const uint32 uiDiff) { DialogueUpdate(uiDiff); }
+    void UpdateEscortAI(const uint32 uiDiff)
+    {
+        DialogueUpdate(uiDiff);
+    }
 };
 
 CreatureAI* GetAI_npc_squire_rowe(Creature* pCreature)
@@ -925,7 +941,10 @@ struct MANGOS_DLL_DECL npc_reginald_windsorAI : public npc_escortAI, private Dia
         m_playerGuid = pPlayer->GetObjectGuid();
     }
 
-    bool IsKeepEventReady() { return m_bIsKeepReady; }
+    bool IsKeepEventReady()
+    {
+        return m_bIsKeepReady;
+    }
 
     void UpdateEscortAI(const uint32 uiDiff) override
     {

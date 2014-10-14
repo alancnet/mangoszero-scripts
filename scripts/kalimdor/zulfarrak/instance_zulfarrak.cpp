@@ -1,18 +1,28 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
-* This program is free software; you can redistribute it and/or modify
-* it under the terms of the GNU General Public License as published by
-* the Free Software Foundation; either version 2 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU General Public License for more details.
-*
-* You should have received a copy of the GNU General Public License
-* along with this program; if not, write to the Free Software
-* Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-*/
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
+ */
 
 /* ScriptData
 SDName: instance_zulfarrak
@@ -149,14 +159,30 @@ void instance_zulfarrak::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_VELRATHA: SetData(TYPE_VELRATHA, IN_PROGRESS); break;
-        case NPC_GAHZRILLA: SetData(TYPE_GAHZRILLA, IN_PROGRESS); break;
-        case NPC_ANTUSUL: SetData(TYPE_ANTUSUL, IN_PROGRESS); break;
-        case NPC_THEKA: SetData(TYPE_THEKA, IN_PROGRESS); break;
-        case NPC_ZUMRAH: SetData(TYPE_ZUMRAH, IN_PROGRESS); break;
-        case NPC_NEKRUM: SetData(TYPE_NEKRUM, IN_PROGRESS); break;
-        case NPC_SEZZZIZ: SetData(TYPE_SEZZZIZ, IN_PROGRESS); break;
-        case NPC_CHIEF_SANDSCALP: SetData(TYPE_CHIEF_SANDSCALP, IN_PROGRESS); break;
+        case NPC_VELRATHA:
+            SetData(TYPE_VELRATHA, IN_PROGRESS);
+            break;
+        case NPC_GAHZRILLA:
+            SetData(TYPE_GAHZRILLA, IN_PROGRESS);
+            break;
+        case NPC_ANTUSUL:
+            SetData(TYPE_ANTUSUL, IN_PROGRESS);
+            break;
+        case NPC_THEKA:
+            SetData(TYPE_THEKA, IN_PROGRESS);
+            break;
+        case NPC_ZUMRAH:
+            SetData(TYPE_ZUMRAH, IN_PROGRESS);
+            break;
+        case NPC_NEKRUM:
+            SetData(TYPE_NEKRUM, IN_PROGRESS);
+            break;
+        case NPC_SEZZZIZ:
+            SetData(TYPE_SEZZZIZ, IN_PROGRESS);
+            break;
+        case NPC_CHIEF_SANDSCALP:
+            SetData(TYPE_CHIEF_SANDSCALP, IN_PROGRESS);
+            break;
     }
 }
 
@@ -164,14 +190,30 @@ void instance_zulfarrak::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_VELRATHA: SetData(TYPE_VELRATHA, FAIL); break;
-        case NPC_GAHZRILLA: SetData(TYPE_GAHZRILLA, FAIL); break;
-        case NPC_ANTUSUL: SetData(TYPE_ANTUSUL, FAIL); break;
-        case NPC_THEKA: SetData(TYPE_THEKA, FAIL); break;
-        case NPC_ZUMRAH: SetData(TYPE_ZUMRAH, FAIL); break;
-        case NPC_NEKRUM: SetData(TYPE_NEKRUM, FAIL); break;
-        case NPC_SEZZZIZ: SetData(TYPE_SEZZZIZ, FAIL); break;
-        case NPC_CHIEF_SANDSCALP: SetData(TYPE_CHIEF_SANDSCALP, FAIL); break;
+        case NPC_VELRATHA:
+            SetData(TYPE_VELRATHA, FAIL);
+            break;
+        case NPC_GAHZRILLA:
+            SetData(TYPE_GAHZRILLA, FAIL);
+            break;
+        case NPC_ANTUSUL:
+            SetData(TYPE_ANTUSUL, FAIL);
+            break;
+        case NPC_THEKA:
+            SetData(TYPE_THEKA, FAIL);
+            break;
+        case NPC_ZUMRAH:
+            SetData(TYPE_ZUMRAH, FAIL);
+            break;
+        case NPC_NEKRUM:
+            SetData(TYPE_NEKRUM, FAIL);
+            break;
+        case NPC_SEZZZIZ:
+            SetData(TYPE_SEZZZIZ, FAIL);
+            break;
+        case NPC_CHIEF_SANDSCALP:
+            SetData(TYPE_CHIEF_SANDSCALP, FAIL);
+            break;
     }
 }
 
@@ -179,14 +221,30 @@ void instance_zulfarrak::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_VELRATHA: SetData(TYPE_VELRATHA, DONE); break;
-        case NPC_GAHZRILLA: SetData(TYPE_GAHZRILLA, DONE); break;
-        case NPC_ANTUSUL: SetData(TYPE_ANTUSUL, DONE); break;
-        case NPC_THEKA: SetData(TYPE_THEKA, DONE); break;
-        case NPC_ZUMRAH: SetData(TYPE_ZUMRAH, DONE); break;
-        case NPC_NEKRUM: SetData(TYPE_NEKRUM, DONE); break;
-        case NPC_SEZZZIZ: SetData(TYPE_SEZZZIZ, DONE); break;
-        case NPC_CHIEF_SANDSCALP: SetData(TYPE_CHIEF_SANDSCALP, DONE); break;
+        case NPC_VELRATHA:
+            SetData(TYPE_VELRATHA, DONE);
+            break;
+        case NPC_GAHZRILLA:
+            SetData(TYPE_GAHZRILLA, DONE);
+            break;
+        case NPC_ANTUSUL:
+            SetData(TYPE_ANTUSUL, DONE);
+            break;
+        case NPC_THEKA:
+            SetData(TYPE_THEKA, DONE);
+            break;
+        case NPC_ZUMRAH:
+            SetData(TYPE_ZUMRAH, DONE);
+            break;
+        case NPC_NEKRUM:
+            SetData(TYPE_NEKRUM, DONE);
+            break;
+        case NPC_SEZZZIZ:
+            SetData(TYPE_SEZZZIZ, DONE);
+            break;
+        case NPC_CHIEF_SANDSCALP:
+            SetData(TYPE_CHIEF_SANDSCALP, DONE);
+            break;
     }
 }
 

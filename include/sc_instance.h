@@ -1,6 +1,28 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
-* This program is free software licensed under GPL version 2
-* Please see the included DOCS/LICENSE.TXT for more information */
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
+ */
 
 #ifndef SC_INSTANCE_H
 #define SC_INSTANCE_H
@@ -100,9 +122,16 @@ class DialogueHelper
         DialogueHelper(DialogueEntryTwoSide const* aDialogueTwoSide);
 
         /// Function to initialize the dialogue helper for instances. If not used with instances, GetSpeakerByEntry MUST be overwritten to obtain the speakers
-        void InitializeDialogueHelper(ScriptedInstance* pInstance, bool bCanSimulateText = false) { m_pInstance = pInstance; m_bCanSimulate = bCanSimulateText; }
+        void InitializeDialogueHelper(ScriptedInstance* pInstance, bool bCanSimulateText = false)
+        {
+            m_pInstance = pInstance;
+            m_bCanSimulate = bCanSimulateText;
+        }
         /// Set if take first entries or second entries
-        void SetDialogueSide(bool bIsFirstSide) { m_bIsFirstSide = bIsFirstSide; }
+        void SetDialogueSide(bool bIsFirstSide)
+        {
+            m_bIsFirstSide = bIsFirstSide;
+        }
 
         void StartNextDialogueText(int32 iTextEntry);
 
@@ -112,7 +141,10 @@ class DialogueHelper
         /// Will be called when a dialogue step was done
         virtual void JustDidDialogueStep(int32 /*iEntry*/) {}
         /// Will be called to get a speaker, MUST be implemented if not used in instances
-        virtual Creature* GetSpeakerByEntry(uint32 /*uiEntry*/) { return NULL; }
+        virtual Creature* GetSpeakerByEntry(uint32 /*uiEntry*/)
+        {
+            return NULL;
+        }
 
     private:
         void DoNextDialogueStep();

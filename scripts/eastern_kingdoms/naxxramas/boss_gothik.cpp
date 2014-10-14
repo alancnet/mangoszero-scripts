@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -243,9 +253,15 @@ struct MANGOS_DLL_DECL boss_gothikAI : public ScriptedAI
         GuidList* plSummonPosGuids;
         switch (uiSummonEntry)
         {
-            case NPC_UNREL_TRAINEE:      plSummonPosGuids = &m_lTraineeSummonPosGuids;     break;
-            case NPC_UNREL_DEATH_KNIGHT: plSummonPosGuids = &m_lDeathKnightSummonPosGuids; break;
-            case NPC_UNREL_RIDER:        plSummonPosGuids = &m_lRiderSummonPosGuids;       break;
+            case NPC_UNREL_TRAINEE:
+                plSummonPosGuids = &m_lTraineeSummonPosGuids;
+                break;
+            case NPC_UNREL_DEATH_KNIGHT:
+                plSummonPosGuids = &m_lDeathKnightSummonPosGuids;
+                break;
+            case NPC_UNREL_RIDER:
+                plSummonPosGuids = &m_lRiderSummonPosGuids;
+                break;
             default:
                 return;
         }
@@ -280,9 +296,15 @@ struct MANGOS_DLL_DECL boss_gothikAI : public ScriptedAI
                     // Wrong caster, it expected to be pSummoned.
                     // Mangos deletes the spell event at caster death, so for delayed spell like this
                     // it's just a workaround. Does not affect other than the visual though (+ spell takes longer to "travel")
-                case NPC_UNREL_TRAINEE:         m_creature->CastSpell(pAnchor, SPELL_A_TO_ANCHOR_1, true, NULL, NULL, pSummoned->GetObjectGuid()); break;
-                case NPC_UNREL_DEATH_KNIGHT:    m_creature->CastSpell(pAnchor, SPELL_B_TO_ANCHOR_1, true, NULL, NULL, pSummoned->GetObjectGuid()); break;
-                case NPC_UNREL_RIDER:           m_creature->CastSpell(pAnchor, SPELL_C_TO_ANCHOR_1, true, NULL, NULL, pSummoned->GetObjectGuid()); break;
+                case NPC_UNREL_TRAINEE:
+                    m_creature->CastSpell(pAnchor, SPELL_A_TO_ANCHOR_1, true, NULL, NULL, pSummoned->GetObjectGuid());
+                    break;
+                case NPC_UNREL_DEATH_KNIGHT:
+                    m_creature->CastSpell(pAnchor, SPELL_B_TO_ANCHOR_1, true, NULL, NULL, pSummoned->GetObjectGuid());
+                    break;
+                case NPC_UNREL_RIDER:
+                    m_creature->CastSpell(pAnchor, SPELL_C_TO_ANCHOR_1, true, NULL, NULL, pSummoned->GetObjectGuid());
+                    break;
             }
         }
     }
@@ -299,10 +321,22 @@ struct MANGOS_DLL_DECL boss_gothikAI : public ScriptedAI
                 {
                     switch (m_uiSpeech)
                     {
-                        case 1: DoScriptText(SAY_SPEECH_1, m_creature); m_uiSpeechTimer = 4 * IN_MILLISECONDS; break;
-                        case 2: DoScriptText(SAY_SPEECH_2, m_creature); m_uiSpeechTimer = 6 * IN_MILLISECONDS; break;
-                        case 3: DoScriptText(SAY_SPEECH_3, m_creature); m_uiSpeechTimer = 5 * IN_MILLISECONDS; break;
-                        case 4: DoScriptText(SAY_SPEECH_4, m_creature); m_uiPhase = PHASE_BALCONY; break;
+                        case 1:
+                            DoScriptText(SAY_SPEECH_1, m_creature);
+                            m_uiSpeechTimer = 4 * IN_MILLISECONDS;
+                            break;
+                        case 2:
+                            DoScriptText(SAY_SPEECH_2, m_creature);
+                            m_uiSpeechTimer = 6 * IN_MILLISECONDS;
+                            break;
+                        case 3:
+                            DoScriptText(SAY_SPEECH_3, m_creature);
+                            m_uiSpeechTimer = 5 * IN_MILLISECONDS;
+                            break;
+                        case 4:
+                            DoScriptText(SAY_SPEECH_4, m_creature);
+                            m_uiPhase = PHASE_BALCONY;
+                            break;
                     }
                     m_uiSpeech++;
                 }

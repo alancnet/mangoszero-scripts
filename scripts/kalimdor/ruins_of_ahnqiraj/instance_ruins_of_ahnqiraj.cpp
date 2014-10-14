@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -74,11 +84,21 @@ void instance_ruins_of_ahnqiraj::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KURINNAXX: SetData(TYPE_KURINNAXX, IN_PROGRESS); break;
-        case NPC_MOAM:      SetData(TYPE_MOAM, IN_PROGRESS);      break;
-        case NPC_BURU:      SetData(TYPE_BURU, IN_PROGRESS);      break;
-        case NPC_AYAMISS:   SetData(TYPE_AYAMISS, IN_PROGRESS);   break;
-        case NPC_OSSIRIAN:  SetData(TYPE_OSSIRIAN, IN_PROGRESS);  break;
+        case NPC_KURINNAXX:
+            SetData(TYPE_KURINNAXX, IN_PROGRESS);
+            break;
+        case NPC_MOAM:
+            SetData(TYPE_MOAM, IN_PROGRESS);
+            break;
+        case NPC_BURU:
+            SetData(TYPE_BURU, IN_PROGRESS);
+            break;
+        case NPC_AYAMISS:
+            SetData(TYPE_AYAMISS, IN_PROGRESS);
+            break;
+        case NPC_OSSIRIAN:
+            SetData(TYPE_OSSIRIAN, IN_PROGRESS);
+            break;
     }
 }
 
@@ -86,11 +106,21 @@ void instance_ruins_of_ahnqiraj::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KURINNAXX: SetData(TYPE_KURINNAXX, FAIL); break;
-        case NPC_MOAM:      SetData(TYPE_MOAM, FAIL);      break;
-        case NPC_BURU:      SetData(TYPE_BURU, FAIL);      break;
-        case NPC_AYAMISS:   SetData(TYPE_AYAMISS, FAIL);   break;
-        case NPC_OSSIRIAN:  SetData(TYPE_OSSIRIAN, FAIL);  break;
+        case NPC_KURINNAXX:
+            SetData(TYPE_KURINNAXX, FAIL);
+            break;
+        case NPC_MOAM:
+            SetData(TYPE_MOAM, FAIL);
+            break;
+        case NPC_BURU:
+            SetData(TYPE_BURU, FAIL);
+            break;
+        case NPC_AYAMISS:
+            SetData(TYPE_AYAMISS, FAIL);
+            break;
+        case NPC_OSSIRIAN:
+            SetData(TYPE_OSSIRIAN, FAIL);
+            break;
         case NPC_RAJAXX:
             // Rajaxx yells on evade
             DoScriptText(SAY_DEAGGRO, pCreature);
@@ -111,12 +141,24 @@ void instance_ruins_of_ahnqiraj::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_KURINNAXX: SetData(TYPE_KURINNAXX, DONE); break;
-        case NPC_RAJAXX:    SetData(TYPE_RAJAXX, DONE);    break;
-        case NPC_MOAM:      SetData(TYPE_MOAM, DONE);      break;
-        case NPC_BURU:      SetData(TYPE_BURU, DONE);      break;
-        case NPC_AYAMISS:   SetData(TYPE_AYAMISS, DONE);   break;
-        case NPC_OSSIRIAN:  SetData(TYPE_OSSIRIAN, DONE);  break;
+        case NPC_KURINNAXX:
+            SetData(TYPE_KURINNAXX, DONE);
+            break;
+        case NPC_RAJAXX:
+            SetData(TYPE_RAJAXX, DONE);
+            break;
+        case NPC_MOAM:
+            SetData(TYPE_MOAM, DONE);
+            break;
+        case NPC_BURU:
+            SetData(TYPE_BURU, DONE);
+            break;
+        case NPC_AYAMISS:
+            SetData(TYPE_AYAMISS, DONE);
+            break;
+        case NPC_OSSIRIAN:
+            SetData(TYPE_OSSIRIAN, DONE);
+            break;
         case NPC_COLONEL_ZERRAN:
         case NPC_MAJOR_PAKKON:
         case NPC_MAJOR_YEGGETH:

@@ -1,4 +1,11 @@
-/* Copyright (C) 2006 - 2013 ScriptDev2 <http://www.scriptdev2.com/>
+/**
+ * ScriptDev2 is an extension for mangos-zero providing enhanced features for
+ * area triggers, creatures, game objects, instances, items, and spells beyond
+ * the default database scripting.
+ *
+ * Copyright (C) 2006-2013  ScriptDev2 <http://www.scriptdev2.com/>
+ * Parts Copyright (C) 2014  MaNGOS project  <http://getmangos.com>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -12,6 +19,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * World of Warcraft, and all World of Warcraft or Warcraft art, images,
+ * and lore are copyrighted by Blizzard Entertainment, Inc.
  */
 
 /* ScriptData
@@ -52,7 +62,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_professor_phizzlethorpeAI : public npc_escortAI
 {
-    npc_professor_phizzlethorpeAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_professor_phizzlethorpeAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     void Reset() override { }
 
@@ -65,19 +78,29 @@ struct MANGOS_DLL_DECL npc_professor_phizzlethorpeAI : public npc_escortAI
 
         switch (uiPointId)
         {
-            case 4: DoScriptText(SAY_PROGRESS_2, m_creature, pPlayer); break;
-            case 5: DoScriptText(SAY_PROGRESS_3, m_creature, pPlayer); break;
-            case 8: DoScriptText(EMOTE_PROGRESS_4, m_creature); break;
+            case 4:
+                DoScriptText(SAY_PROGRESS_2, m_creature, pPlayer);
+                break;
+            case 5:
+                DoScriptText(SAY_PROGRESS_3, m_creature, pPlayer);
+                break;
+            case 8:
+                DoScriptText(EMOTE_PROGRESS_4, m_creature);
+                break;
             case 9:
                 m_creature->SummonCreature(ENTRY_VENGEFUL_SURGE, -2056.41f, -2144.01f, 20.59f, 5.70f, TEMPSUMMON_TIMED_OOC_OR_CORPSE_DESPAWN, 600000);
                 m_creature->SummonCreature(ENTRY_VENGEFUL_SURGE, -2050.17f, -2140.02f, 19.54f, 5.17f, TEMPSUMMON_TIMED_OOC_OR_CORPSE_DESPAWN, 600000);
                 break;
-            case 10: DoScriptText(SAY_PROGRESS_5, m_creature, pPlayer); break;
+            case 10:
+                DoScriptText(SAY_PROGRESS_5, m_creature, pPlayer);
+                break;
             case 11:
                 DoScriptText(SAY_PROGRESS_6, m_creature, pPlayer);
                 SetRun();
                 break;
-            case 19: DoScriptText(SAY_PROGRESS_7, m_creature, pPlayer); break;
+            case 19:
+                DoScriptText(SAY_PROGRESS_7, m_creature, pPlayer);
+                break;
             case 20:
                 DoScriptText(EMOTE_PROGRESS_8, m_creature);
                 DoScriptText(SAY_PROGRESS_9, m_creature, pPlayer);
@@ -143,7 +166,10 @@ enum
 
 struct MANGOS_DLL_DECL npc_kineloryAI : public npc_escortAI
 {
-    npc_kineloryAI(Creature* pCreature) : npc_escortAI(pCreature) { Reset(); }
+    npc_kineloryAI(Creature* pCreature) : npc_escortAI(pCreature)
+    {
+        Reset();
+    }
 
     uint32 m_uiBearFormTimer;
     uint32 m_uiHealTimer;
