@@ -43,7 +43,7 @@ enum
     SPELL_SUMMON_ILLUSION_3     = 24729,
 };
 
-struct MANGOS_DLL_DECL boss_hazzarahAI : public ScriptedAI
+struct boss_hazzarahAI : public ScriptedAI
 {
     boss_hazzarahAI(Creature* pCreature) : ScriptedAI(pCreature)
     {

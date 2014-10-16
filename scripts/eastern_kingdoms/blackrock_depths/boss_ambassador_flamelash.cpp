@@ -42,7 +42,7 @@ enum
     NPC_BURNING_SPIRIT          = 9178,
 };
 
-struct MANGOS_DLL_DECL boss_ambassador_flamelashAI : public ScriptedAI
+struct boss_ambassador_flamelashAI : public ScriptedAI
 {
     boss_ambassador_flamelashAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
@@ -57,6 +57,9 @@ struct MANGOS_DLL_DECL boss_ambassador_flamelashAI : public ScriptedAI
     void Reset() override
     {
         m_uiSpiritTimer = 12000;
+        Rand = 0;
+        RandX = 0;
+        RandY = 0;
     }
 
     void SummonSpirits()

@@ -109,7 +109,7 @@ enum CThunPhase
 ## boss_eye_of_cthun
 ######*/
 
-struct MANGOS_DLL_DECL boss_eye_of_cthunAI : public Scripted_NoMovementAI
+struct boss_eye_of_cthunAI : public Scripted_NoMovementAI
 {
     boss_eye_of_cthunAI(Creature* pCreature) : Scripted_NoMovementAI(pCreature)
     {
@@ -337,7 +337,7 @@ struct MANGOS_DLL_DECL boss_eye_of_cthunAI : public Scripted_NoMovementAI
 ## boss_cthun
 ######*/
 
-struct MANGOS_DLL_DECL boss_cthunAI : public Scripted_NoMovementAI
+struct boss_cthunAI : public Scripted_NoMovementAI
 {
     boss_cthunAI(Creature* pCreature) : Scripted_NoMovementAI(pCreature)
     {
@@ -683,7 +683,7 @@ struct MANGOS_DLL_DECL boss_cthunAI : public Scripted_NoMovementAI
 ## npc_giant_claw_tentacle
 ######*/
 
-struct MANGOS_DLL_DECL npc_giant_claw_tentacleAI : public Scripted_NoMovementAI
+struct npc_giant_claw_tentacleAI : public Scripted_NoMovementAI
 {
     npc_giant_claw_tentacleAI(Creature* pCreature) : Scripted_NoMovementAI(pCreature)
     {

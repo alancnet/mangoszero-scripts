@@ -63,7 +63,7 @@ enum SCEquip
 
 /// Documentation of CreatureAI functions can be found in MaNGOS source
 // Only list them here again to ensure that the interface between SD2 and the core is not changed unnoticed
-struct MANGOS_DLL_DECL ScriptedAI : public CreatureAI
+struct ScriptedAI : public CreatureAI
 {
     public:
         explicit ScriptedAI(Creature* pCreature);
@@ -249,7 +249,7 @@ struct MANGOS_DLL_DECL ScriptedAI : public CreatureAI
         uint32 m_uiEvadeCheckCooldown;
 };
 
-struct MANGOS_DLL_DECL Scripted_NoMovementAI : public ScriptedAI
+struct Scripted_NoMovementAI : public ScriptedAI
 {
     Scripted_NoMovementAI(Creature* pCreature) : ScriptedAI(pCreature)
     {

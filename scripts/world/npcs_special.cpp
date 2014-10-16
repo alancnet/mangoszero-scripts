@@ -62,7 +62,7 @@ enum
     FACTION_CHICKEN         = 31
 };
 
-struct MANGOS_DLL_DECL npc_chicken_cluckAI : public ScriptedAI
+struct npc_chicken_cluckAI : public ScriptedAI
 {
     npc_chicken_cluckAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
@@ -229,7 +229,7 @@ const uint32 HordeSoldierId[3] =
 ## npc_doctor (handles both Gustaf Vanhowzen and Gregory Victor)
 ######*/
 
-struct MANGOS_DLL_DECL npc_doctorAI : public ScriptedAI
+struct npc_doctorAI : public ScriptedAI
 {
     npc_doctorAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
@@ -275,7 +275,7 @@ struct MANGOS_DLL_DECL npc_doctorAI : public ScriptedAI
 ## npc_injured_patient (handles all the patients, no matter Horde or Alliance)
 #####*/
 
-struct MANGOS_DLL_DECL npc_injured_patientAI : public ScriptedAI
+struct npc_injured_patientAI : public ScriptedAI
 {
     npc_injured_patientAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
@@ -581,7 +581,7 @@ enum
     SAY_SHAYA_GOODBYE       = -1000263,
 };
 
-struct MANGOS_DLL_DECL npc_garments_of_questsAI : public npc_escortAI
+struct npc_garments_of_questsAI : public npc_escortAI
 {
     npc_garments_of_questsAI(Creature* pCreature) : npc_escortAI(pCreature)
     {
@@ -777,7 +777,7 @@ CreatureAI* GetAI_npc_garments_of_quests(Creature* pCreature)
 
 #define SPELL_DEATHTOUCH                5
 
-struct MANGOS_DLL_DECL npc_guardianAI : public ScriptedAI
+struct npc_guardianAI : public ScriptedAI
 {
     npc_guardianAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
@@ -885,7 +885,7 @@ enum
     NPC_BLOOD_KNIGHT            = 17768,        // blood elf side
 };
 
-struct MANGOS_DLL_DECL npc_redemption_targetAI : public ScriptedAI
+struct npc_redemption_targetAI : public ScriptedAI
 {
     npc_redemption_targetAI(Creature* pCreature) : ScriptedAI(pCreature)
     {

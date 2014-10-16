@@ -47,7 +47,7 @@ enum
     QUEST_SHATTERED_SALUTE  = 2460
 };
 
-struct MANGOS_DLL_DECL npc_shenthulAI : public ScriptedAI
+struct npc_shenthulAI : public ScriptedAI
 {
     npc_shenthulAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
