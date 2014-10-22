@@ -50,6 +50,7 @@ enum
     NPC_SHADE_OF_JINDO              = 14986,
     NPC_SACRIFICED_TROLL            = 14826,
     NPC_POWERFULL_HEALING_WARD      = 14987,
+    SPELL_SHADE_OF_JINDO_PASSIVE    = 24307,
 
     MAX_SKELETONS                   = 9,
 };
@@ -143,7 +144,7 @@ struct boss_jindoAI : public ScriptedAI
                 float fX, fY, fZ;
                 m_creature->GetRandomPoint(pTarget->GetPositionX(), pTarget->GetPositionY(), pTarget->GetPositionZ(), 5.0f, fX, fY, fZ);
                 if (Creature* pSummoned = m_creature->SummonCreature(NPC_SHADE_OF_JINDO, fX, fY, fZ, 0, TEMPSUMMON_TIMED_OOC_DESPAWN, 15000))
-                    pSummoned->AI()->AttackStart(pTarget);
+                    pSummoned->CastSpell(pSummoned, SPELL_SHADE_OF_JINDO_PASSIVE, true);
 
                 m_uiDelusionsTimer = urand(4000, 12000);
             }
