@@ -1,40 +1,56 @@
-== ScriptDev2 README ==
+mangos-zero scripts
+===================
 
-  Copyright (C) 2006 - 2013 ScriptDev2 <https://github.com/scriptdev2>
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 2 of the License, or
-  (at your option) any later version.
+**mangos-zero scripts** are an Open Source [GPL version 2 licensed](License.md)
+library for the [mangos-zero server][mz-server], providing unique scripts for
+creatures, game objects, events and other game data which requires special
+attention and can not be recreated by database.
 
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+Supporting the project
+----------------------
+If you like **mangos-zero scripts** and want to support the project, there are
+various options:
 
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+* testing and reporting issues: if you use **mangos-zero**, please report issues
+  you find for the [scripts][mz-scripts-issues].
+* submit fixes: any help is welcome! It does not matter if its' proof reading
+  and fixing messages printed by the server, or if you produce documentation
+  or code. As long as you have fun, be an active part of the project!
 
-== Welcome to ScriptDev2 ==
+Documentation
+-------------
+Documentation is available at [docs.getmangos.com][mangos-zero-docs], and is
+updated on regular basis with the latest changes
 
-ScriptDev2 is a script library, an extention of the scripting capabilities
-that comes with MaNGOS, written in C++ and is
-compatible with Windows and Linux. SQL needed for database support both
-MySQL and PostgreSQL.
+Installation
+------------
+To install **mangos-zero** on various target platforms, please checkout our
+updated [installation documentation][mangos-zero-installation].
 
-This script library provides unique scripts for NPCs, gameobjects, events
-and other that need unique implementation.
+Contributing
+------------
+All information about contributing to **mangos-zero** can be found in our
+[documentation for contributors][mangos-zero-contribute].
 
-Once ScriptDev2 is compiled it is automatically run by MaNGOS on server
-startup.
+Bug Tracking
+------------
+**mangos-zero scripts** uses the [BitBucket issue tracker][mz-scripts-issues].
+If you have found bugs, please create an issue.
 
-For further information on ScriptDev2, please visit our project web site
-at http://www.scriptdev2.com/
+License
+-------
+**mangos-zero scripts** are licensed under the terms of the [GNU GPL version 2](License.md).
 
-Documentation on various development related topics can be found in the
-../doc/ sub directory as well as on the web site.
 
-The required SQL files for creating the database backend are included in
-the ../sql/ sub directory. If you are updating from an older ScriptDev2
-version, make sure to take a look at the SQL files provided in the
-../sql/updates/ sub directory.
+[wow]:                      http://worldofwarcraft.com/ "World of Warcraft"
+[wow-1]:                    http://blizzard.com/games/wow/ "Blizzard Entertainment: World of Warcraft"
+
+[mangos-zero]:              http://getmangos.com/ "Vanilla WoW - getmangos.com"
+[mangos-zero-docs]:         http://docs.getmangos.com/ "mangos-zero documentation"
+[mangos-zero-contribute]:   http://docs.getmangos.com/en/latest/contributing/ "Contributing - mangos-zero"
+[mangos-zero-installation]: http://docs.getmangos.com/en/latest/installation/ "Installation - mangos-zero"
+
+[mz-team]:                  http://bitbucket.org/mangoszero/ "mangos-zero project"
+[mz-server]:                http://bitbucket.org/mangoszero/server/ "mangos-zero server repository"
+[mz-scripts]:               http://bitbucket.org/mangoszero/scripts/ "mangos-zero scripts repository"
+[mz-scripts-issues]:        http://bitbucket.org/mangoszero/scripts/issues "mangos-zero scripts issues"
