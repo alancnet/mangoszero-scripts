@@ -16,7 +16,7 @@ CREATE TABLE `custom_texts` (
   `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
   `comment` text,
   PRIMARY KEY (`entry`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Custom Texts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COMMENT='Custom Texts';
 
 DROP TABLE IF EXISTS `gossip_texts`;
 CREATE TABLE `gossip_texts` (
@@ -32,7 +32,7 @@ CREATE TABLE `gossip_texts` (
   `content_loc8` text,
   `comment` text,
   PRIMARY KEY (`entry`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gossip Texts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COMMENT='Gossip Texts';
 
 DROP TABLE IF EXISTS `script_texts`;
 CREATE TABLE `script_texts` (
@@ -52,7 +52,7 @@ CREATE TABLE `script_texts` (
   `emote` smallint(5) unsigned NOT NULL DEFAULT '0',
   `comment` text,
   PRIMARY KEY  (`entry`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COMMENT='Script Texts';
 
 DROP TABLE IF EXISTS script_waypoint;
 CREATE TABLE script_waypoint (
@@ -64,7 +64,7 @@ CREATE TABLE script_waypoint (
   waittime int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'wait time in milliseconds',
   point_comment text,
   PRIMARY KEY (entry, pointid)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Creature waypoints';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8  COMMENT='Script Creature waypoints';
 
 DROP TABLE IF EXISTS `sd2_db_version`;
 CREATE TABLE `sd2_db_version` (
